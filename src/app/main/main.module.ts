@@ -17,8 +17,7 @@ import { UtilityService } from '../core/services/utility.service';
 
 @NgModule({
   imports: [
-    CommonModule,
-    UserModule,
+    CommonModule,UserModule,
     RouterModule.forChild(mainRoutes)
   ],
   providers: [UtilityService, AuthenticationService],
