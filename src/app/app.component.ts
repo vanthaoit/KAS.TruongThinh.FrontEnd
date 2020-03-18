@@ -1,4 +1,4 @@
-import { Component, ElementRef, AfterViewChecked } from '@angular/core';
+import { Component, ElementRef, AfterViewChecked, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -20,5 +20,8 @@ export class AppComponent implements AfterViewChecked {
 
 
 
+  }
+  ngOnInit(){
+    
   }
 }
