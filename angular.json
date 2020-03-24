@@ -5,7 +5,8 @@
   "projects": {
     "TruongThinhFrontEnd": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+       },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -24,12 +25,22 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.css",
-              "src/assets/css/styles.scss"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/font-awesome/css/font-awesome.css",
+              "node_modules/animate.css/animate.css",
+              "src/assets/css/fasthover.css",
+              "src/assets/css/flexslider.css",
+              "src/assets/css/jquery.countdown.css",
+        
+              "src/assets/css/custom.css"    
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.min.js"
-           
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/nprogress/nprogress.js",
+              "node_modules/easy-responsive-tabs/js/easyResponsiveTabs.js",
+              "node_modules/minicart/dist/minicart.js",
+              "src/assets/js/jquery.flexisel.js"
             ]
           },
           "configurations": {
