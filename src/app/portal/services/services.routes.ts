@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { ServicesComponent } from './services.component';
+import { DataModule } from './data/data.module';
 
 export const servicesRoutes: Routes = [
     {

@@ -11,14 +11,14 @@ export class UtilityService {
     this._router = router;
   }
 
-  private navigate(path: string,guard?:NavigationExtras) {
-    this._router.navigate([path],[guard]);
+  private navigate(path: string) {
+    this._router.navigate([path]);
   }
   navigateToLogin(guard?:NavigationExtras) {
-    this.navigate(UrlConstants.LOGIN,[guard]);
+    this.navigate(UrlConstants.LOGIN);
   }
   navigateToHome(guard?:NavigationExtras) {
-    this.navigate(UrlConstants.HOME,[guard]);
+    this.navigate(UrlConstants.HOME);
   }
   getUnsignToString(input: string) {
     if (input == undefined || input == '')

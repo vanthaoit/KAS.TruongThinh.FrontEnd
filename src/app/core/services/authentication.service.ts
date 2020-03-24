@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import { LoggedInUser } from '../domain/logged-in.user';
 import { SystemConstants } from '../common/system.constants';
 import { Http, RequestOptions, Headers, Response } from '@angular/http';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class AuthenticationService {
@@ -21,15 +19,25 @@ export class AuthenticationService {
       + "&grant_type=password";
     let headers = new Headers();
     headers.append("Content-Type", SystemConstants.HEADER_CONTENT_TYPE_URLENDCODED);
-    let options = new RequestOptions({ headers: headers });
-    return this._http.post(SystemConstants.URL_LOCAL_HOST_API_ENDPOINT + SystemConstants.URL_OAUTH_TOKEN, body, options)
-      .map((response: Response) => {
-        let user: LoggedInUser = response.json();
-        if (user && user.access_token) {
-          localStorage.removeItem(SystemConstants.CURRENT_USER);
-          localStorage.setItem(SystemConstants.CURRENT_USER, JSON.stringify(user));
-        }
-      });
+
+    let promise = new Promise((resolve, reject) => {
+      this._http.post(SystemConstants.URL_LOCAL_HOST_API_ENDPOINT + SystemConstants.URL_OAUTH_TOKEN, body, {headers: headers})
+        .subscribe((response: any) => {
+          const user: LoggedInUser = response.json();
+          console.log(user);
+          if (user && user.access_token) {
+            localStorage.removeItem(SystemConstants.CURRENT_USER);
+            localStorage.setItem(SystemConstants.CURRENT_USER, JSON.stringify(user));
+            resolve(true);
+          }
+          else {
+            reject(false);
+          }
+        }, error => {
+          reject(error);
+        });
+    });
+    return promise;
 
   }
 

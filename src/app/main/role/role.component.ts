@@ -13,7 +13,7 @@ import { ModalDirective } from 'ngx-bootstrap';
 })
 export class RoleComponent implements OnInit {
 
-  @ViewChild('createUpdateModal') public createUpdateModal: ModalDirective;
+  @ViewChild('createUpdateModal',{static: false}) public createUpdateModal: ModalDirective;
   public orderIndex: number = 1;
   public pageIndex: number = 1;
   public pageSize: number = PageConstants.PAGE_SIZE;
@@ -34,11 +34,8 @@ export class RoleComponent implements OnInit {
   loadData() {
     this._httpProviderService.get("/api/applicationRole/getListPaging?page=" + this.pageIndex + "&pageSize=" + this.pageSize + "&filter=" + this.filter)
       .subscribe(result => {
-        this.roles = result.Items,
-          this.totalPages = result.TotalPage,
-          this.pageIndex = result.Page;
-        this.orderIndex = result.TotalCount;
-        console.log("items=" + result.Items);
+
+        console.log("items=" + result);
 
       }, error => {
         console.log("error= " + error);
@@ -72,7 +69,7 @@ export class RoleComponent implements OnInit {
           .subscribe(result => {
             this.loadData();
             this.createUpdateModal.hide();
-            this._notificationService.displaySuccessMessage(MessageConstants.CREATED_OK_MSG+" "+ result.Name);
+            this._notificationService.displaySuccessMessage(MessageConstants.CREATED_OK_MSG+" "+ result);
           }, error => {
             this._httpProviderService.handleError(error);
           });
@@ -81,7 +78,7 @@ export class RoleComponent implements OnInit {
           .subscribe(result => {
             this.loadData();
             this.createUpdateModal.hide();
-            this._notificationService.displaySuccessMessage(MessageConstants.UPDATED_OK_MSG+ " "+result.Name);
+            this._notificationService.displaySuccessMessage(MessageConstants.UPDATED_OK_MSG+ " "+result);
           }, error => {
             this._httpProviderService.handleError(error);
           });

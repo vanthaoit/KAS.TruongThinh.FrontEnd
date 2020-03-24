@@ -6,7 +6,8 @@ import { AuthenticationService } from './authentication.service';
 import { SystemConstants } from '../common/system.constants';
 import { MessageConstants } from '../common/message.constants';
 import { UtilityService } from './utility.service';
-import { Observable } from 'rxjs/Observable';
+import { catchError } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 
 @Injectable()
@@ -22,21 +23,21 @@ export class HttpProviderService {
 
   get(uri: string) {
     this.getHeader();
-    return this._http.get(SystemConstants.URL_LOCAL_HOST_API_ENDPOINT + uri, { headers: this._header }).map(this.extractData);
+    return this._http.get(SystemConstants.URL_LOCAL_HOST_API_ENDPOINT + uri, { headers: this._header }).pipe(catchError(this.handleError));
 
   }
   post(uri: string, data?: any) {
     this.getHeader();
-    return this._http.post(SystemConstants.URL_LOCAL_HOST_API_ENDPOINT + uri, data, { headers: this._header }).map(this.extractData);
+    return this._http.post(SystemConstants.URL_LOCAL_HOST_API_ENDPOINT + uri, data, { headers: this._header }).pipe(catchError(this.handleError));
 
   }
   put(uri: string, data?: any) {
     this.getHeader();
-    return this._http.put(SystemConstants.URL_LOCAL_HOST_API_ENDPOINT + uri, data, { headers: this._header }).map(this.extractData);
+    return this._http.put(SystemConstants.URL_LOCAL_HOST_API_ENDPOINT + uri, data, { headers: this._header }).pipe(catchError(this.handleError));
   }
   delete(uri: string, key: string, id: string) {
     this.getHeader();
-    return this._http.delete(SystemConstants.URL_LOCAL_HOST_API_ENDPOINT + uri + "/?" + key + "=" + id, { headers: this._header }).map(this.extractData);
+    return this._http.delete(SystemConstants.URL_LOCAL_HOST_API_ENDPOINT + uri + "/?" + key + "=" + id, { headers: this._header }).pipe(catchError(this.handleError));
   }
   postFile(uri: string, data?: any) {
 
