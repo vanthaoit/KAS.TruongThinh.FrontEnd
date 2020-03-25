@@ -34,7 +34,8 @@
               "node_modules/easy-responsive-tabs/js/easyResponsiveTabs.js",
               "node_modules/minicart/dist/minicart.js",
               "node_modules/magnific-popup/dist/jquery.magnific-popup.js",
-              "src/assets/js/jquery.flexisel.js"
+              "src/assets/js/jquery.flexisel.js",
+              "src/assets/js/jquery.wmuSlider.js"
               
               
             ]

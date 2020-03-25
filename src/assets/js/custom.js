@@ -12,6 +12,9 @@ var CURRENT_URL = window.location.href.split('?')[0],
 // Sidebar
 $(document).ready(function () {
 
+    
+    
+
     $('.popup-with-zoom-anim').magnificPopup({
         type: 'inline',
         fixedContentPos: false,
@@ -297,7 +300,7 @@ if (typeof NProgress != 'undefined') {
         NProgress.done();
     });
 }
-
+ $(window).on('load', function(){ $('.example1').wmuSlider();});
 /**
  * Resize function without multiple trigger
  * 
