@@ -1,5 +1,4 @@
 
-
 var CURRENT_URL = window.location.href.split('?')[0],
     $BODY = $('body'),
     $MENU_TOGGLE = $('#menu_toggle'),
@@ -11,7 +10,65 @@ var CURRENT_URL = window.location.href.split('?')[0],
     $FOOTER = $('footer');
 
 // Sidebar
-$(document).ready(function() {
+$(document).ready(function () {
+
+    $('.popup-with-zoom-anim').magnificPopup({
+        type: 'inline',
+        fixedContentPos: false,
+        fixedBgPos: true,
+        overflowY: 'auto',
+        closeBtnInside: true,
+        preloader: false,
+        midClick: true,
+        removalDelay: 300,
+        mainClass: 'my-mfp-zoom-in'
+    });
+    $("#flexiselDemo1").flexisel({
+        visibleItems: 4,
+        animationSpeed: 1000,
+        autoPlay: true,
+        autoPlaySpeed: 3000,
+        pauseOnHover: true,
+        enableResponsiveBreakpoints: true,
+        responsiveBreakpoints: {
+            portrait: {
+                changePoint: 480,
+                visibleItems: 1
+            },
+            landscape: {
+                changePoint: 640,
+                visibleItems: 2
+            },
+            tablet: {
+                changePoint: 768,
+                visibleItems: 3
+            }
+        }
+    });
+
+    $("#flexiselDemo2").flexisel({
+        visibleItems: 4,
+        animationSpeed: 1000,
+        autoPlay: true,
+        autoPlaySpeed: 3000,
+        pauseOnHover: true,
+        enableResponsiveBreakpoints: true,
+        responsiveBreakpoints: {
+            portrait: {
+                changePoint: 568,
+                visibleItems: 1
+            },
+            landscape: {
+                changePoint: 667,
+                visibleItems: 2
+            },
+            tablet: {
+                changePoint: 768,
+                visibleItems: 3
+            }
+        }
+    });
+
 
 
     // TODO: This is some kind of easy fix, maybe we can improve this
@@ -30,12 +87,12 @@ $(document).ready(function() {
         $RIGHT_COL.css('min-height', contentHeight);
     };
 
-    $SIDEBAR_MENU.find('a').off('click').on('click', function(ev) {
+    $SIDEBAR_MENU.find('a').off('click').on('click', function (ev) {
         var $li = $(this).parent();
 
         if ($li.is('.active')) {
             $li.removeClass('active active-sm');
-            $('ul:first', $li).slideUp(function() {
+            $('ul:first', $li).slideUp(function () {
                 setContentHeight();
             });
         } else {
@@ -44,17 +101,17 @@ $(document).ready(function() {
                 $SIDEBAR_MENU.find('li').removeClass('active active-sm');
                 $SIDEBAR_MENU.find('li ul').slideUp();
             }
-            
+
             $li.addClass('active');
 
-            $('ul:first', $li).slideDown(function() {
+            $('ul:first', $li).slideDown(function () {
                 setContentHeight();
             });
         }
     });
 
     // toggle small or large menu
-    $MENU_TOGGLE.off('click').on('click', function() {
+    $MENU_TOGGLE.off('click').on('click', function () {
         if ($BODY.hasClass('nav-md')) {
             $SIDEBAR_MENU.find('li.active ul').hide();
             $SIDEBAR_MENU.find('li.active').addClass('active-sm').removeClass('active');
@@ -73,12 +130,12 @@ $(document).ready(function() {
 
     $SIDEBAR_MENU.find('a').filter(function () {
         return this.href == CURRENT_URL;
-    }).parent('li').addClass('current-page').parents('ul').slideDown(function() {
+    }).parent('li').addClass('current-page').parents('ul').slideDown(function () {
         setContentHeight();
     }).parent().addClass('active');
 
     // recompute content when resizing
-    $(window).smartresize(function(){  
+    $(window).smartresize(function () {
         setContentHeight();
     });
 
@@ -89,27 +146,27 @@ $(document).ready(function() {
         $('.menu_fixed').mCustomScrollbar({
             autoHideScrollbar: true,
             theme: 'minimal',
-            mouseWheel:{ preventDefault: true }
+            mouseWheel: { preventDefault: true }
         });
     }
 });
 // /Sidebar
 
 // Panel toolbox
-$(document).ready(function() {
-    $('.collapse-link').off('click').on('click', function() {
+$(document).ready(function () {
+    $('.collapse-link').off('click').on('click', function () {
         var $BOX_PANEL = $(this).closest('.x_panel'),
             $ICON = $(this).find('i'),
             $BOX_CONTENT = $BOX_PANEL.find('.x_content');
-        
+
         // fix for some div with hardcoded fix class
         if ($BOX_PANEL.attr('style')) {
-            $BOX_CONTENT.slideToggle(200, function(){
+            $BOX_CONTENT.slideToggle(200, function () {
                 $BOX_PANEL.removeAttr('style');
             });
         } else {
-            $BOX_CONTENT.slideToggle(200); 
-            $BOX_PANEL.css('height', 'auto');  
+            $BOX_CONTENT.slideToggle(200);
+            $BOX_PANEL.css('height', 'auto');
         }
 
         $ICON.toggleClass('fa-chevron-up fa-chevron-down');
@@ -124,7 +181,7 @@ $(document).ready(function() {
 // /Panel toolbox
 
 // Tooltip
-$(document).ready(function() {
+$(document).ready(function () {
     $('[data-toggle="tooltip"]').tooltip({
         container: 'body'
     });
@@ -138,7 +195,7 @@ if ($(".progress .progress-bar")[0]) {
 // /Progressbar
 
 // Switchery
-$(document).ready(function() {
+$(document).ready(function () {
     if ($(".js-switch")[0]) {
         var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
         elems.forEach(function (html) {
@@ -151,7 +208,7 @@ $(document).ready(function() {
 // /Switchery
 
 // iCheck
-$(document).ready(function() {
+$(document).ready(function () {
     if ($("input.flat")[0]) {
         $(document).ready(function () {
             $('input.flat').iCheck({
@@ -217,7 +274,7 @@ function countChecked() {
 }
 
 // Accordion
-$(document).ready(function() {
+$(document).ready(function () {
     $(".expand").off('click').on("click", function () {
         $(this).next().slideToggle(200);
         $expand = $(this).find(">:first-child");
@@ -236,10 +293,11 @@ if (typeof NProgress != 'undefined') {
         NProgress.start();
     });
 
-   $(window).on('load', function() {
+    $(window).on('load', function () {
         NProgress.done();
     });
 }
+
 /**
  * Resize function without multiple trigger
  * 
@@ -248,18 +306,18 @@ if (typeof NProgress != 'undefined') {
  *     // code here
  * });
  */
-(function($,sr){
+(function ($, sr) {
     // debouncing function from John Hann
     // http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
     var debounce = function (func, threshold, execAsap) {
-      var timeout;
+        var timeout;
 
-        return function debounced () {
+        return function debounced() {
             var obj = this, args = arguments;
-            function delayed () {
+            function delayed() {
                 if (!execAsap)
                     func.apply(obj, args);
-                timeout = null; 
+                timeout = null;
             }
 
             if (timeout)
@@ -267,11 +325,12 @@ if (typeof NProgress != 'undefined') {
             else if (execAsap)
                 func.apply(obj, args);
 
-            timeout = setTimeout(delayed, threshold || 100); 
+            timeout = setTimeout(delayed, threshold || 100);
         };
     };
 
     // smartresize 
-    jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
+    jQuery.fn[sr] = function (fn) { return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
 
-})(jQuery,'smartresize');
+})(jQuery, 'smartresize');
+
