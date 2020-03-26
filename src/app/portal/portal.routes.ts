@@ -10,7 +10,7 @@ export const portalRoutes: Routes = [
           //localhost:4200/
           path: '', component: PortalComponent, children: [
             //localhost:4200/front-end
-            { path: '', redirectTo: 'about', pathMatch: 'full' },
+            { path: '', redirectTo: 'index', pathMatch: 'full' },
             //localhost:4200/front-end/home
             { path: 'index', loadChildren: './index/index.module#IndexModule' },
 
