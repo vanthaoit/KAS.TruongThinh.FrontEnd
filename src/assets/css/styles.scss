@@ -7,6 +7,8 @@
 @import "../../../src/assets/css/flexslider.css";
 @import "../../../src/assets/css/jquery.countdown.css";
 @import "../../../src/assets/css/popuo-box.css";
+@import "../../../src/assets/css/slicebox.css";
+
 
 
 /*--
@@ -658,6 +660,7 @@ margin: 0;
 color:#fff; 
 border: none;
   border-bottom: 1px solid #3c43a4;
+  border-radius: 6px;
 } 
 .nav-tabs > li > a:hover {
   border-bottom: 1px solid #3c43a4;
@@ -5101,9 +5104,9 @@ h3.tittle-w3l:after {
 
 /*-- carousel-slider --*/
 .carousel-caption {
-  position: inherit;
-  min-height:600px;
-  padding-top:8em;
+  position: sticky;
+  height: 300px;
+  padding-top: 4em;
 }
 
 .carousel .item{    
@@ -5187,6 +5190,9 @@ h3.tittle-w3l:after {
 .carousel-indicators {
     bottom: 4%;
 }
+.slide-about {
+  margin-bottom: 1em;
+}
 /*-- carousel-slider --*/
 
 // content
@@ -5238,14 +5244,68 @@ outline:none;
   color: #999;
 }
 .img-video-index{
-  padding-top: 1em;
+  margin-top: 1em;
+  overflow: hidden;
  
 }
 .img-video-index img{
   width: 100%;
   height: 300px;
+  transition: transform .5s ease;
+  cursor: pointer;
+  
+}
+.img-video-index img:hover{
+  transform: scale(1.5);
 }
 .index_banner_left{
   box-shadow: 5px 0px 3px 5px #D6D6D6;
 }
 /*--end home video--*/
+
+/*running text*/
+.sitemessage {
+  display: inline-block;
+  white-space: nowrap;
+  animation: floatText 5s infinite linear;
+  padding-left: 100%; /*Initial offset*/
+}
+
+.sitemessage:hover {
+  animation-play-state: paused;
+}
+
+@keyframes floatText {
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.move-down {
+  animation: moving 10s infinite; 
+  -webkit-animation: moving 10s infinite; 
+  position:relative;
+}
+@keyframes moving {
+  from {top: 0px;}
+  to {top: 200px;}
+}
+@-webkit-keyframes moving {
+     from {top: 0px;}
+  to {top: 200px;}
+}
+.move-up{
+  animation: moving-up 10s infinite; 
+  -webkit-animation: moving-up 10s infinite; 
+  position:relative;
+}
+@keyframes moving-up {
+  from {top: 200px;}
+  to {top: 0px;}
+}
+@-webkit-keyframes moving-up {
+     from {top: 200px;}
+  to {top: 0px;}
+}
+
+/*running text*/
