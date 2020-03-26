@@ -5105,6 +5105,13 @@ h3.tittle-w3l:after {
 /*-- carousel-slider --*/
 .carousel-caption {
   position: sticky;
+  min-height: 400px;
+  padding-top: 20em;
+  margin-left: -60px;
+}
+
+.carousel-caption-about {
+  position: sticky;
   height: 300px;
   padding-top: 4em;
 }
