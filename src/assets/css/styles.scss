@@ -57,7 +57,7 @@ float:left;
 .header_logo_title{
 float:left;
 margin-left: 13em;
-width: 50%;
+width: 54%;
 }
 .header_logo_title h1{
   padding: 0.7em;
@@ -67,16 +67,17 @@ font-size:1.1em;
 color:#212121;
 text-decoration:none;
 padding-left: 0.5em;
+text-shadow: 4px 4px #aba1a1;
 }
 .header_logo_title h1 a span {
   display: block;
   font-size: .3em;
   text-transform: capitalize;
-  letter-spacing: 7px;
+  letter-spacing: 4px;
   padding-left: 4px;
   text-align: center;
   margin-top: 0.5em;
-
+  text-shadow: none;
 }
 .header_logo_official{
   float: left;
