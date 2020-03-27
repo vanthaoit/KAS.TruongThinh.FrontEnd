@@ -5,7 +5,7 @@ import { MainModule } from './main/main.module';
 
 export const appRoutes: Routes = [
    //localhost:4200
-   { path: '', redirectTo: 'login', pathMatch: 'full' },
+   { path: '', redirectTo: 'portal', pathMatch: 'full' },
 
    { path: 'portal', loadChildren: './portal/portal.module#PortalModule' },
    //localhost:4200/login
