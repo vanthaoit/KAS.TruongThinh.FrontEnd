@@ -6,12 +6,14 @@ import {SidebarMenuComponent} from '../../shared/sidebar-menu/sidebar-menu/sideb
 import {RouterModule} from '@angular/router';
 import {servicesRoutes} from './services.routes';
 
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     RouterModule.forChild(servicesRoutes)
   ],
-  declarations: [ServicesComponent,SidebarMenuComponent]
+  declarations: [ServicesComponent,SidebarMenuComponent],
+  exports:[RouterModule]
 })
 export class ServicesModule { }

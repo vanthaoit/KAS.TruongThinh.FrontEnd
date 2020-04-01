@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import {BreadcrumbUrlService} from '../../../core/services/breadcrumb-url.service';
 
 @Component({
   selector: 'app-data',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DataComponent implements OnInit {
 
-  constructor() { }
+  _lastBreabcrumb: string = ",particular services";
+  _output:string;
+ 
+  constructor(private breadcrumb:BreadcrumbUrlService) { 
+    this.breadcrumb.currentBreadcrumb.subscribe(mess=>this._output = mess);
+    this.breadcrumb.changeMessage(this._output + this._lastBreabcrumb);
+  }
 
   ngOnInit() {
+    
   }
 
 }
