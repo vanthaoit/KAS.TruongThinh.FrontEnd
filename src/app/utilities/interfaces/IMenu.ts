@@ -3,5 +3,6 @@ export interface IMenu {
     name: string;
     description: string;
     tags?: string[];
+    url?: string;
     childMenu? :IMenu[];
 } 

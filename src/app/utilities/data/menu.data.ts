@@ -5,7 +5,9 @@ export const menuData: IMenu[] = [
 
         id: 0,
         name: 'Gia công cơ khí (GCCK)',
-        description: 'Gia công cơ khí'
+        description: 'Gia công cơ khí',
+        url:'/\portal/\services',
+        childMenu:[]
     },
     {
 
@@ -18,6 +20,7 @@ export const menuData: IMenu[] = [
                     id: 0,
                     name: 'Khảo sát thiết kế',
                     description: 'Khảo sát thiết kế'
+                   
                 },
                 {
                     id: 1,
@@ -35,6 +38,7 @@ export const menuData: IMenu[] = [
 
         id: 2,
         name: 'Sản xuất kinh doanh (SXKD)',
-        description: 'Đầu tư & Sản xuất kinh doanh (SXKD)'
+        description: 'Đầu tư & Sản xuất kinh doanh (SXKD)',
+        childMenu:[]
     }
 ]

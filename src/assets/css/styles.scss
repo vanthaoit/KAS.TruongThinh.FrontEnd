@@ -98,11 +98,12 @@ margin-top: 0.5em;
 .w3l_login a span{
 top:1.3em;
 }
-a.act {
+span.act,a.act {
   color:#FF5722 !important;
   font-weight: bolder;
   font-size: 16px !important;
 }
+
 /*-- search --*/
 .search{
 position: relative;
@@ -420,15 +421,17 @@ ul.multi-column-dropdown h6 {
   display: block;
   clear: both;
   line-height: 1.428571429;
-  color: #999 !important;
+  color: #101010 !important;
   white-space: normal;
 font-weight:500 !important;
 text-decoration:none;
+font-family: -webkit-body;
+font-size: 1.3em;
 }
 .single-column li{
   list-style-type: none;
 }
-.single-column li a {
+.single-column li h6 a,.multi-column-dropdown h6 a {
   display: block;
   clear: both;
   line-height: 1.428571429;
@@ -436,13 +439,19 @@ text-decoration:none;
   white-space: normal;
 font-weight:500 !important;
 text-decoration:none;
-font-size: 1.5em;
+font-size: 1em;
 }
+.single-column li h6 {
+  font-size: 1.5em !important;
+}
+
+
 .multi-column-dropdown li a:hover{
-color:#212121 !important;
+color:#FF5722 !important;
+font-size: 1.4em;
 }
 .single-column li a:hover{
-  color:#212121 !important;
+  color:#FF5722 !important;
   }
 .multi-column-dropdown li a span {
   margin-left: 1em;
@@ -460,6 +469,9 @@ color:#212121 !important;
   padding: .4em .5em;
   background: #3c43a4;
   text-align: center;
+}
+.navbar-nav li .dropdown-menu{
+
 }
 .dropdown-menu.columns-3 {
   min-width:900px;
@@ -486,8 +498,21 @@ left: -130%;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
-.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+.navbar-nav > li > span {
+  padding: 20px 30px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #fff;
+}
+.nav>li>span {
+  position: relative;
+  display: block;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > li > span:hover, .navbar-default .navbar-nav > li > span:focus {
   color:#FF5722;
+  cursor: pointer;
 }
 .navbar {
   margin-bottom: 0;
@@ -528,7 +553,8 @@ li.w3pages ul.dropdown-menu {
 li.w3pages .dropdown-menu > li > a:hover{
   color: #000; 
 }
-.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus,
+.navbar-default .navbar-nav > .open > span, .navbar-default .navbar-nav > .open > span:hover, .navbar-default .navbar-nav > .open > span:focus {
   color: #FF5722; 
 }
 /*-- //navigation --*/

@@ -3,69 +3,38 @@
         <h3 class="agileits-sear-head">Dịch vụ</h3>
         <div class="w3ls_mobiles_grid_left_grid_sub">
             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                <div class="member-item">
-                    <div>
+             
+                <div *ngFor="let item of _serviceMenu;" class="member-item">
+                    <div *ngIf="item.childMenu.length ==0">
                         <h4 class="panel-title asd">
                             <a href="#">
-                                New Arrivals
+                                {{item.name}}
                             </a>
                         </h4>
                     </div>
-                </div>
-                <div class="member-item">
-                    <div class="panel-heading group-item" role="tab" id="headingOne">
-                        <h4 class="panel-title asd">
-                            <a class="pa_italic" role="button" data-toggle="collapse" data-parent="#accordion"
-                                href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                <span class="glyphicon glyphicon-forward" aria-hidden="true"></span><i
-                                    class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></i>New Arrivals
-                            </a>
-                        </h4>
-                    </div>
-                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
-                        aria-labelledby="headingOne">
-                        <div class="panel-body panel_text">
-                            <ul>
-                                <li><a href="products.html">Mobiles</a></li>
-                                <li><a href="products1.html">Laptop</a></li>
-                                <li><a href="products2.html">Tv</a></li>
-                                <li><a href="products.html">Wearables</a></li>
-                                <li><a href="products2.html">Refrigerator</a></li>
-                            </ul>
+                    <div *ngIf="item.childMenu.length != 0">
+                        <div class="panel-heading group-item" role="tab" id="{{'heading'+item.id}}">
+                            <h4 class="panel-title asd">
+                                <a class="pa_italic" role="button" data-toggle="collapse" data-parent="#accordion"
+                                href="{{'#collapse' +item.id}}" aria-expanded="true" [attr.aria-controls]="'collapse' + item.id">
+                                    <span class="glyphicon glyphicon-forward" aria-hidden="true"></span><i
+                                        class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></i>{{item.name}}
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="{{'collapse'+ item.id}}" class="panel-collapse collapse in" role="tabpanel"
+                        [attr.aria-labelledby]="'heading' + item.id">
+                            <div class="panel-body panel_text">
+                                <ul>
+                                    <li *ngFor="let item2 of item.childMenu;"><a href="products.html">{{item2.name}}</a></li>
+                                  
+                                </ul>
+                            </div>
                         </div>
                     </div>
+                    
                 </div>
-                <div class="member-item">
-                    <div class="panel-heading group-item" role="tab" id="headingTwo">
-                        <h4 class="panel-title asd">
-                            <a class="pa_italic" role="button" data-toggle="collapse" data-parent="#accordion"
-                                href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                <span class="glyphicon glyphicon-forward" aria-hidden="true"></span><i
-                                    class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></i>New Arrivals
-                            </a>
-                        </h4>
-                    </div>
-                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                        <div class="panel-body panel_text">
-                            <ul>
-                                <li><a href="products2.html">Grinder</a></li>
-                                <li><a href="products2.html">Heater</a></li>
-                                <li><a href="products2.html">Kid's Toys</a></li>
-                                <li><a href="products2.html">Filters</a></li>
-                                <li><a href="products2.html">AC</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="member-item">
-                    <div>
-                        <h4 class="panel-title asd">
-                            <a href="#">
-                                New Arrivals
-                            </a>
-                        </h4>
-                    </div>
-                </div>
+                
             </div>
 
         </div>

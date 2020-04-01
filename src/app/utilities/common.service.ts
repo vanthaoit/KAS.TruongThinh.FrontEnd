@@ -21,6 +21,7 @@ export class CommonService {
     if (this._isActiveMenu == null || this._isActiveMenu == "") {
       localStorage.setItem(navigationAction.activeMenu, 'home');
       $(this._navigationMenu).find('a[data-title=home]').addClass(navigationActiveClass.activeClass);
+      $(this._navigationMenu).find('span[data-title=home]').addClass(navigationActiveClass.activeClass);
     } else {
       this.executeActiveMenu();
     }
@@ -41,12 +42,15 @@ export class CommonService {
 
     if (this._isActiveMenu !== null && this._isActiveMenu !== "") {
       $(this._navigationMenu).find('a').removeClass(navigationActiveClass.activeClass);
+      $(this._navigationMenu).find('span').removeClass(navigationActiveClass.activeClass);
       $(this._navigationMenu).find('a[data-title=' + this._isActiveMenu + ']').addClass(navigationActiveClass.activeClass);
+      $(this._navigationMenu).find('span[data-title=' + this._isActiveMenu + ']').addClass(navigationActiveClass.activeClass);
 
     }
   }
   getBreadcrumbAddress(){
     this._currentMenu = $(this._navigationMenu).find('a[data-title=' + this._isActiveMenu + ']');
+    this._currentMenu = this._currentMenu != undefined ? this._currentMenu :$(this._navigationMenu).find('span[data-title=' + this._isActiveMenu + ']')
     return this._currentMenu;
   }
 
