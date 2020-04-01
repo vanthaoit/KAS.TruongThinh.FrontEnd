@@ -435,11 +435,12 @@ font-size: 1.3em;
   display: block;
   clear: both;
   line-height: 1.428571429;
-  color: #3c43a4 !important;
+  color: #ef0707  !important;
   white-space: normal;
-font-weight:500 !important;
-text-decoration:none;
-font-size: 1em;
+  font-weight:500 !important;
+  text-decoration:none;
+  font-size: 1em;
+  text-align: center;
 }
 .single-column li h6 {
   font-size: 1.5em !important;
@@ -474,9 +475,9 @@ font-size: 1.4em;
 
 }
 .dropdown-menu.columns-3 {
-  min-width:900px;
+
   padding: 30px 30px;
-left: -130%;
+  left: -260%;
 }
 .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
   background: none;
@@ -3707,6 +3708,10 @@ ul.multi-column-dropdown h6 {
 .w3agile_special_deals_grid_right_pos {
   left: 23%;
 }
+.dropdown-menu.columns-3 {
+  padding: 30px 30px;
+  left: -250%;
+}
 }
 @media (max-width:768px){
 .navbar-nav > li:nth-child(1) {
@@ -3715,8 +3720,10 @@ ul.multi-column-dropdown h6 {
 .w3agile_special_deals_grid_left {
   padding-left: 1em;
 }
+
+
 .dropdown-menu.columns-3 {
-  min-width: 735px;
+  min-width: 590px;
 }
 .dropdown-menu {
   left: -100%;
@@ -5386,5 +5393,7 @@ outline:none;
      from {top: 200px;}
   to {top: 0px;}
 }
-
+.navbar-nav {
+  margin: 7.5px -15px !important;
+}
 /*running text*/
