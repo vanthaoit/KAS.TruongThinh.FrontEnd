@@ -63,11 +63,11 @@ width: 54%;
   padding: 0.7em;
 }
 .header_logo_title h1 a{
-font-size:1.1em;
-color:#212121;
-text-decoration:none;
-padding-left: 0.5em;
-text-shadow: 4px 4px #aba1a1;
+  font-size: 1.1em;
+  color: #ec0a0a;
+  text-decoration: none;
+  padding-left: 0.5em;
+  font-weight: bold;
 }
 .header_logo_title h1 a span {
   display: block;
@@ -77,6 +77,7 @@ text-shadow: 4px 4px #aba1a1;
   padding-left: 4px;
   text-align: center;
   margin-top: 0.5em;
+  color: black;
   text-shadow: none;
 }
 .header_logo_official{
@@ -477,7 +478,8 @@ font-size: 1.4em;
 .dropdown-menu.columns-3 {
 
   padding: 30px 30px;
-  left: -260%;
+  left: -285%;
+  text-align: center;
 }
 .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
   background: none;
@@ -1709,7 +1711,7 @@ left: 75%;
 }
 .breadcrumb_dress ul li{
 display:inline-block;
-color:#333;
+color:#3c43a4;
 font-size:14px;
 }
 .breadcrumb_dress ul li a{
@@ -1724,6 +1726,7 @@ color:#333;
 }
 .breadcrumb_dress ul li i{
   padding:0 1em;
+  color: #0e238c;
 }
 /*-- //breadcrumb --*/
 /*-- mobiles --*/

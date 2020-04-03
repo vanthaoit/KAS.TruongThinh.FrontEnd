@@ -4,8 +4,8 @@ import {Routes,RouterModule} from '@angular/router';
 import {DataComponent} from './data.component';
 
 export const dataRoutes:Routes =[
-  {path:'',redirectTo:'infor',pathMatch:'full'},
-  {path:'infor',component:DataComponent}
+
+  {path:'',component:DataComponent}
 
 ]
 @NgModule({

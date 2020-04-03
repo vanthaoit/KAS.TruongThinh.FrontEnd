@@ -21,10 +21,7 @@ export const servicesRoutes: Routes = [
 
         ]
     }
-    // { path: 'data', component: DataComponent },
-    // // { path: 'mechanical', component: MechanicalComponent },
-    // { path: 'business', component: BusinessComponent },
-    // {path: "", redirectTo: '/business', pathMatch: 'full'}
+
 
 ];
 

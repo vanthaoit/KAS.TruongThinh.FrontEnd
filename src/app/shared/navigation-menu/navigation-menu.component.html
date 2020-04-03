@@ -53,11 +53,12 @@
     <ul>
       <li>
         <a href="index.html">
-          <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home
+          <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
         </a>
-        <i>/</i>
+        <i class="glyphicon glyphicon-hand-right"></i>
       </li>
-      <li>Products</li>
+ 
+      <li *ngFor="let item of _currentBreabcrumb.split(',');last as isLast">{{item}}<i *ngIf="!isLast" class="glyphicon glyphicon-hand-right"></i></li>
       
     </ul>
   </div>

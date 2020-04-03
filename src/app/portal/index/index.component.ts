@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {BreadcrumbUrlService} from '../../core/services/breadcrumb-url.service';
 
 @Component({
   selector: 'app-index',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IndexComponent implements OnInit {
 
-  constructor() { }
+  _breadcrumbURL:string  = "trang chủ" ;
+  constructor(private breadcrumb:BreadcrumbUrlService) { 
+    this.breadcrumb.changeMessage(this._breadcrumbURL);
+  }
 
   ngOnInit() {
   }
