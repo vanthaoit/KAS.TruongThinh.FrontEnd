@@ -848,11 +848,13 @@ display:inline-block;
 display: block;
 }
 .w3_hs_bottom ul li a,.flex_ecommerce a{
-font-size:1em;
-color:#212121;
-text-decoration:none;
-padding: .5em;
+  font-size:1em;
+  color:#212121;
+  text-decoration:none;
+  padding: .8em;
   background: #fff;
+  border-radius: 7px;
+  box-shadow: 3px 3px #aba1a1;
 }
 .w3_hs_bottom ul li a:hover,.flex_ecommerce a:hover{
 background:#FF5722;
@@ -1428,7 +1430,7 @@ display:inline-block;
 margin: 0 !important;
 }
 .agileits_social_button ul li a{
-background: url(../images/img-sp.png) no-repeat 1px -130px #414141;
+background: url(../images/img-sp.png) no-repeat 1px -130px #da751f;
   display: block;
   width: 35px;
   height: 35px;

@@ -5,10 +5,8 @@ import {RouterModule,Routes} from '@angular/router';
 
 
 export const indexRoutes: Routes =[
-  //localhost: 4200/main/user
-  {path:'',redirectTo:'infor',pathMatch:'full'},
   //4200/main/user/index
-  {path:'infor',component:IndexComponent}
+  {path:'',component:IndexComponent}
 ];
 
 @NgModule({

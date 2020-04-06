@@ -4,8 +4,7 @@ import {RouterModule,Routes} from '@angular/router'
 import {AboutComponent} from './about.component'
 
 export const aboutRoutes: Routes =[
-  {path:'', redirectTo:'infor',pathMatch:'full'},
-  {path:'infor',component:AboutComponent}
+  {path:'',component:AboutComponent}
 ]
 
 @NgModule({
