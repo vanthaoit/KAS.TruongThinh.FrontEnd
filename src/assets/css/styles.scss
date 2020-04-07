@@ -134,7 +134,7 @@ transition:all 0.3s ease-out;
 -webkit-transition:all 0.3s ease-out;
 }
 .search_form input[type='text']{
-width: 380px;
+width: 360px;
   padding: 10px;
   outline: none;
   font-size: 14px;
@@ -763,9 +763,9 @@ font-size: 1.2em;
   font-weight: 600;
 }
 .simpleCart_shelfItem p span{
-color: #999;
+  color: #212121;
   font-size: .8em;
-  text-decoration: line-through;
+  /* text-decoration: line-through; */
   padding-right: 1em;
   font-weight: 300;
 }
@@ -792,11 +792,16 @@ background:#3c43a4;
 color:#fff;
 border:1px solid #3c43a4;
 }
+.hs-position{
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+}
 /*-- image-hover --*/
 .w3_hs_bottom{
   position: absolute;
   cursor: pointer;
-  width: 100%;
+  width: 110%;
   height: 100%;
   background: rgba(245, 140, 11, 0.25);
   opacity: 0;
@@ -5110,6 +5115,7 @@ h3.agileits-sear-head {
   margin: 0.5em;
   font-size: 27px;
   font-family: unset;
+  text-transform: uppercase;
 }
 .panel-heading.group-item{
   margin-left: -33px;
