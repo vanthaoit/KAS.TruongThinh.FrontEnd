@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {BreadcrumbUrlService} from '../../../core/services/breadcrumb-url.service';
 import {Material} from '../../../utilities/data/product.data';
+declare var $:any;
 
 @Component({
   selector: 'app-data',
@@ -20,6 +21,9 @@ export class DataComponent implements OnInit {
 
   ngOnInit() {
     this._materialProduct = Material;
+  }
+  openModal(modalId){
+    $(modalId).modal("show");
   }
 
 }
