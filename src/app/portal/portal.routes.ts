@@ -13,12 +13,14 @@ export const portalRoutes: Routes = [
             { path: '', redirectTo: 'index', pathMatch: 'full' },
             //localhost:4200/front-end/home
             { path: 'index', loadChildren: './index/index.module#IndexModule' },
+            //{ path: 'index', loadChildren: () =>IndexModule },
 
             { path: 'about', loadChildren: './about/about.module#AboutModule' },
 
             { path: 'services', loadChildren: './services/services.module#ServicesModule' },
 
             { path: 'contact', loadChildren: './contact/contact.module#ContactModule' }
+            //{ path: 'business', loadChildren: () =>BusinessModule }
 
         ]
     }

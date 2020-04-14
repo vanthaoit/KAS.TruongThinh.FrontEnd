@@ -22,8 +22,6 @@ export class DataComponent implements OnInit {
   ngOnInit() {
     this._materialProduct = Material;
   }
-  openModal(modalId){
-    $(modalId).modal("show");
-  }
+
 
 }

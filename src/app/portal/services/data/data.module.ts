@@ -5,7 +5,7 @@ import {DataComponent} from './data.component';
 
 export const dataRoutes:Routes =[
 
-  {path:'',component:DataComponent}
+  { path: '', component: DataComponent}
 
 ]
 @NgModule({

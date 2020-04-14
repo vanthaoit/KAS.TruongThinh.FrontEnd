@@ -33,6 +33,7 @@
     "font-awesome": "^4.7.0",
     "jquery": "^3.4.1",
     "magnific-popup": "^1.1.0",
+    "mdbootstrap": "^4.16.0",
     "minicart": "^3.0.6",
     "ngx-bootstrap": "^5.5.0",
     "node-sass": "^4.13.1",
