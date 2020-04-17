@@ -13,8 +13,9 @@ export class DataComponent implements OnInit {
 
   _lastBreabcrumb: string = ",particular services";
   _output:string;
-  _materialProduct:any;
+  public _materialProduct:any;
   _dataHttpService:any;
+  _test:any;
  
   constructor(private breadcrumb:BreadcrumbUrlService,private _httpService:HttpProviderService ) { 
     this.breadcrumb.currentBreadcrumb.subscribe(mess=>this._output = mess);
@@ -22,14 +23,19 @@ export class DataComponent implements OnInit {
   }
 
   ngOnInit() {
+    var test = this.getItems();
     this._materialProduct = Material;
-    this.getItems();
+    
+    debugger
   }
-  getItems(){
+  public getItems(){
     this._httpService.get('product/getall').subscribe((resp:any)=>{
+      
+      this._materialProduct = resp;
+    }, error => {
       debugger
-      this._dataHttpService = resp;
-    }, error => this._httpService.handleError(error));
+      this._httpService.handleError(error)
+    });
   }
 
 

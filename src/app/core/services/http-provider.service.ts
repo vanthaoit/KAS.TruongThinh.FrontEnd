@@ -6,7 +6,7 @@ import { AuthenticationService } from './authentication.service';
 import { SystemConstants } from '../common/system.constants';
 import { MessageConstants } from '../common/message.constants';
 import { UtilityService } from './utility.service';
-import { catchError } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
 

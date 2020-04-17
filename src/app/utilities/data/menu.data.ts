@@ -6,7 +6,7 @@ export const menuData: IMenu[] = [
         id: 0,
         name: 'Gia công cơ khí (GCCK)',
         description: 'Gia công cơ khí',
-        url:'/\portal/\services',
+        url:'/\portal/\services/\data',
         childMenu:[]
     },
     {
