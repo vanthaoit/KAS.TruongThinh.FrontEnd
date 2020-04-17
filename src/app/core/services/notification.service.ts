@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import {MessageConstants} from '../common/message.constants';
 declare var alertify: any;
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class NotificationService {
 
   private _notification: any = alertify;

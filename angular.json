@@ -38,7 +38,8 @@
               "node_modules/mdbootstrap/js/mdb.min.js",
               "src/assets/js/jquery.flexisel.js",
               "src/assets/js/jquery.wmuSlider.js",
-              "src/assets/js/jquery.slicebox.js"
+              "src/assets/js/jquery.slicebox.js",
+              "node_modules/alertifyjs/build/alertify.js"
 
               
             ]

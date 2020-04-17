@@ -16,5 +16,6 @@ import {servicesRoutes} from './services.routes';
   ],
   declarations: [ServicesComponent,SidebarMenuComponent,RelatedComponent],
   exports:[RouterModule]
+
 })
 export class ServicesModule { }

@@ -1,7 +1,6 @@
 import { Routes } from '@angular/router';
 import { MainComponent } from './main.component';
 import {ProductModule} from './product/product.module';
-import {RoleModule} from './role/role.module';
 import {ProductCategoryModule} from './product-category/product-category.module';
 import {FunctionModule} from './function/function.module';
 
@@ -17,7 +16,6 @@ export const mainRoutes: Routes = [
 
             { path: 'user', loadChildren: './user/user.module#UserModule' },
 
-            { path: 'role', loadChildren: () =>RoleModule },
             { path: 'product', loadChildren: ()=>ProductModule },
             { path: 'product-category', loadChildren: () =>ProductCategoryModule },
             { path: 'function', loadChildren: ()=>FunctionModule }
