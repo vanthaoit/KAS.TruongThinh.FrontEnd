@@ -23,15 +23,15 @@ export class DataComponent implements OnInit {
   }
 
   ngOnInit() {
-    var test = this.getItems();
-    this._materialProduct = Material;
-    
-    debugger
+    this.getItems();
+    //this._dataHttpService = Material;
+
   }
   public getItems(){
-    this._httpService.get('product/getall').subscribe((resp:any)=>{
+    this._httpService.get('product/getall').subscribe((resp:any[])=>{
       
-      this._materialProduct = resp;
+      this._dataHttpService = resp;
+      console.log(this._dataHttpService);
     }, error => {
       debugger
       this._httpService.handleError(error)

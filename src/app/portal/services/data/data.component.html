@@ -5,20 +5,20 @@
 
         <div class="w3ls_mobiles_grid_right_grid3">
             <h3 class="col-md-12 heading-tittle">Gia công cơ khí</h3>
-            <div *ngFor="let item of _materialProduct"
+            <div *ngFor="let item of _dataHttpService"
                 class="col-md-4 agileinfo_new_products_grid agileinfo_new_products_grid_mobiles">
                 <div class="agile_ecommerce_tab_left mobiles_grid">
                     <div class="hs-position hs-wrapper2 data-content-wrapper">
-                        <img src="{{item?.Image}}" alt=" " class="img-responsive" />
+                        <img src="{{item?.image}}" alt=" " class="img-responsive" />
 
                         <div class="aggression" data-toggle="modal" data-target="#myModal">
 
                             <!-- <a href="#" data-toggle="modal" data-target="#myModal9" aria-hidden="true"></a> -->
                         </div>
                     </div>
-                    <h5><a href="single.html">{{item?.Name}}</a></h5>
+                    <h5><a href="single.html">{{item?.name}}</a></h5>
                     <div class="simpleCart_shelfItem">
-                        <p><span>{{item?.Description}}</span></p>
+                        <p><span>{{item?.description}}</span></p>
                     </div>
                     <div class="mobiles_grid_pos">
                         <h6>New</h6>
