@@ -4,6 +4,7 @@ import {IndexModule} from './index/index.module';
 import {AboutModule} from './about/about.module';
 import {ServicesModule} from './services/services.module';
 import {ContactModule} from './contact/contact.module';
+import {RecruitmentModule} from './recruitment/recruitment.module';
 
 export const portalRoutes: Routes = [
     {
@@ -19,8 +20,11 @@ export const portalRoutes: Routes = [
 
             { path: 'services', loadChildren: './services/services.module#ServicesModule' },
 
-            { path: 'contact', loadChildren: './contact/contact.module#ContactModule' }
-            //{ path: 'business', loadChildren: () =>BusinessModule }
+            { path: 'contact', loadChildren: './contact/contact.module#ContactModule' },
+            //{ path: 'contact', loadChildren: () =>ContactModule },
+
+            { path: 'recruitment', loadChildren: './recruitment/recruitment.module#RecruitmentModule' }
+            //{ path: 'recruitment', loadChildren: () =>RecruitmentModule }
 
         ]
     }
