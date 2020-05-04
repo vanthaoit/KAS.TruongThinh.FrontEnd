@@ -5138,6 +5138,7 @@ h3.agileits-sear-head {
   box-shadow: 0px 0px 0px 0px #D6D6D6;
 }
 .container .product-content .product-content-item{
+  background: whitesmoke;
   box-shadow: 0px 0px 25px 0px #968c8c;
   margin-bottom: 15px;
   padding: 15px 15px 15px 0px;
@@ -5375,6 +5376,7 @@ outline:none;
 }
 .index_banner_left{
   box-shadow: 5px 0px 3px 5px #D6D6D6;
+  background: whitesmoke;
 }
 /*--end home video--*/
 
@@ -5490,3 +5492,22 @@ outline:none;
   line-height: 1.2;
 }
 /*End Tuyen ngon declaration.html*/
+
+// background video
+
+.decoration {
+
+  background-position: center center;
+}
+
+.image-holder {
+
+  background: url(../videos//dark.gif) repeat center;
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+  opacity: .2;
+  
+}
+
+

@@ -12,6 +12,8 @@ var CURRENT_URL = window.location.href.split('?')[0],
 // Sidebar
 $(document).ready(function () {
 
+    var audio = document.getElementById("player");
+    audio.volume = 0.01;
     
     $(function() {
 				
