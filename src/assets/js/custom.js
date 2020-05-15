@@ -12,8 +12,8 @@ var CURRENT_URL = window.location.href.split('?')[0],
 // Sidebar
 $(document).ready(function () {
 
-    var audio = document.getElementById("player");
-    audio.volume = 0.01;
+    // var audio = document.getElementById("player");
+    // audio.volume = 0.01;
     
     $(function() {
 				
@@ -76,6 +76,22 @@ $(document).ready(function () {
         removalDelay: 300,
         mainClass: 'my-mfp-zoom-in'
     });
+    $('.carousel.carousel-multi-item.v-2 .carousel-item').each(function(){
+        var next = $(this).next();
+        if (!next.length) {
+          next = $(this).siblings(':first');
+        }
+        next.children(':first-child').clone().appendTo($(this));
+      
+        for (var i=0;i<4;i++) {
+          next=next.next();
+          if (!next.length) {
+            next=$(this).siblings(':first');
+          }
+          next.children(':first-child').clone().appendTo($(this));
+        }
+      });
+
     $("#flexiselDemo1").flexisel({
         visibleItems: 4,
         animationSpeed: 1000,

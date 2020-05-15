@@ -1,8 +1,10 @@
-import { Component, OnInit, Input,ViewChild } from '@angular/core';
+import { Component, OnInit, Input,ViewChild, Injector } from '@angular/core';
 import { ModalDirective } from 'ngx-bootstrap/modal';
 import {BreadcrumbUrlService} from '../../../core/services/breadcrumb-url.service';
 import {Material} from '../../../utilities/data/product.data';
 import {HttpProviderService} from  '../../../core/services/http-provider.service';
+import { ReactDataApplication } from '../data/react-data.component';
+import { BehaviorSubject } from 'rxjs';
 
 declare var $:any;
 
@@ -21,12 +23,21 @@ export class DataComponent implements OnInit {
   _test:any;
   @ViewChild('addDetailsModal', {static: false}) public addDetailsModal: ModalDirective;
  
-  constructor(private breadcrumb:BreadcrumbUrlService,private _httpService:HttpProviderService ) { 
+  constructor(private breadcrumb:BreadcrumbUrlService,
+    private _httpService:HttpProviderService,
+    private injector: Injector ) { 
     this.breadcrumb.currentBreadcrumb.subscribe(mess=>this._output = mess);
     this.breadcrumb.changeMessage(this._output + this._lastBreabcrumb);
   }
 
   ngOnInit() {
+    var getItem = [{ab:"1",ba:"2"}];
+    var str = '{"theTeam":[{"teamId":"1","status":"pending"},{"teamId":"2","status":"member"},{"teamId":"3","status":"member"}]}';
+
+    var obj = JSON.parse(str);
+    obj['theTeam'].push({"teamId":"4","status":"pending"});
+    str = JSON.stringify(obj);
+    ReactDataApplication.initialize('product-detail',this.injector,str);
     this.entity = {Content:''};
     this.getItems();
     //this._dataHttpService = Material;
@@ -42,6 +53,7 @@ export class DataComponent implements OnInit {
       this._httpService.handleError(error)
     });
   }
+  
   public openDetails(){
     this.addDetailsModal.show();
   }
