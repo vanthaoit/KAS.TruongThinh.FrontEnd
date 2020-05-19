@@ -36,9 +36,13 @@
               "node_modules/magnific-popup/dist/jquery.magnific-popup.js",
               "node_modules/mdbootstrap/js/popper.min.js",
               "node_modules/mdbootstrap/js/mdb.min.js",
+              "node_modules/jcarousel/dist/jquery.jcarousel.min.js",
+              "src/assets/js/custom.js",
               "src/assets/js/jquery.flexisel.js",
               "src/assets/js/jquery.wmuSlider.js",
               "src/assets/js/jquery.slicebox.js",
+              "src/assets/js/move-top.js",
+              
               "node_modules/alertifyjs/build/alertify.js"
 
               

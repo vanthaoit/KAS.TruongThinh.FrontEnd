@@ -14,130 +14,31 @@ $(document).ready(function () {
 
     // var audio = document.getElementById("player");
     // audio.volume = 0.01;
-    
-    $(function() {
-				
-        var Page = (function() {
-
-            var $navArrows = $( '#nav-arrows' ).hide(),
-                $shadow = $( '#shadow' ).hide(),
-                slicebox = $( '#sb-slider' ).slicebox( {
-                    onReady : function() {
-
-                        $navArrows.show();
-                        $shadow.show();
-
-                    },
-                    orientation : 'r',
-                    cuboidsRandom : true,
-                    disperseFactor : 30
-                } ),
-                
-                init = function() {
-
-                    initEvents();
-                    
+    initialLoading = function(){
+        $("#flexiselDemo").flexisel({
+            visibleItems: 3,
+            animationSpeed: 1000,
+            autoPlay: true,
+            autoPlaySpeed: 3000,
+            pauseOnHover: true,
+            enableResponsiveBreakpoints: true,
+            responsiveBreakpoints: {
+                portrait: {
+                    changePoint: 480,
+                    visibleItems: 1
                 },
-                initEvents = function() {
-
-                    // add navigation events
-                    $navArrows.children( ':first' ).on( 'click', function() {
-
-                        slicebox.next();
-                        return false;
-
-                    } );
-
-                    $navArrows.children( ':last' ).on( 'click', function() {
-                        
-                        slicebox.previous();
-                        return false;
-
-                    } );
-
-                };
-
-                return { init : init };
-
-        })();
-
-        Page.init();
-
-    });
-
-    $('.popup-with-zoom-anim').magnificPopup({
-        type: 'inline',
-        fixedContentPos: false,
-        fixedBgPos: true,
-        overflowY: 'auto',
-        closeBtnInside: true,
-        preloader: false,
-        midClick: true,
-        removalDelay: 300,
-        mainClass: 'my-mfp-zoom-in'
-    });
-    $('.carousel.carousel-multi-item.v-2 .carousel-item').each(function(){
-        var next = $(this).next();
-        if (!next.length) {
-          next = $(this).siblings(':first');
-        }
-        next.children(':first-child').clone().appendTo($(this));
-      
-        for (var i=0;i<4;i++) {
-          next=next.next();
-          if (!next.length) {
-            next=$(this).siblings(':first');
-          }
-          next.children(':first-child').clone().appendTo($(this));
-        }
-      });
-
-    $("#flexiselDemo1").flexisel({
-        visibleItems: 4,
-        animationSpeed: 1000,
-        autoPlay: true,
-        autoPlaySpeed: 3000,
-        pauseOnHover: true,
-        enableResponsiveBreakpoints: true,
-        responsiveBreakpoints: {
-            portrait: {
-                changePoint: 480,
-                visibleItems: 1
-            },
-            landscape: {
-                changePoint: 640,
-                visibleItems: 2
-            },
-            tablet: {
-                changePoint: 768,
-                visibleItems: 3
+                landscape: {
+                    changePoint: 640,
+                    visibleItems: 2
+                },
+                tablet: {
+                    changePoint: 768,
+                    visibleItems: 2
+                }
             }
-        }
-    });
-
-    $("#flexiselDemo2").flexisel({
-        visibleItems: 4,
-        animationSpeed: 1000,
-        autoPlay: true,
-        autoPlaySpeed: 3000,
-        pauseOnHover: true,
-        enableResponsiveBreakpoints: true,
-        responsiveBreakpoints: {
-            portrait: {
-                changePoint: 568,
-                visibleItems: 1
-            },
-            landscape: {
-                changePoint: 667,
-                visibleItems: 2
-            },
-            tablet: {
-                changePoint: 768,
-                visibleItems: 3
-            }
-        }
-    });
-
+        });
+    }
+    
 
 
     // TODO: This is some kind of easy fix, maybe we can improve this
@@ -366,7 +267,7 @@ if (typeof NProgress != 'undefined') {
         NProgress.done();
     });
 }
- $(window).on('load', function(){ $('.example1').wmuSlider();});
+$(window).on('load', function () { $('.example1').wmuSlider(); });
 /**
  * Resize function without multiple trigger
  * 

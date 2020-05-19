@@ -1,5 +1,5 @@
 import { Component, ElementRef, AfterViewChecked, OnInit } from '@angular/core';
-
+declare function initialLoading ():any;
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -13,15 +13,15 @@ export class AppComponent implements AfterViewChecked {
 
   ngAfterViewChecked() {
 
-    var _script = document.createElement("script");
-    _script.type = "text/javascript";
-    _script.src = "../assets/js/custom.js";
-    this.elementRef.nativeElement.appendChild(_script);
+    // var _script = document.createElement("script");
+    // _script.type = "text/javascript";
+    // _script.src = "../assets/js/custom.js";
+    // this.elementRef.nativeElement.appendChild(_script);
 
 
 
   }
   ngOnInit(){
-    
+
   }
 }

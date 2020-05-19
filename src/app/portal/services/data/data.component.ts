@@ -5,6 +5,7 @@ import {Material} from '../../../utilities/data/product.data';
 import {HttpProviderService} from  '../../../core/services/http-provider.service';
 import { ReactDataApplication } from '../data/react-data.component';
 import { BehaviorSubject } from 'rxjs';
+import { ReactRelativeApplication } from 'src/app/shared/related/react-relative.component';
 
 declare var $:any;
 
@@ -21,7 +22,6 @@ export class DataComponent implements OnInit {
   public _materialProduct:any;
   _dataHttpService:any;
   _test:any;
-  @ViewChild('addDetailsModal', {static: false}) public addDetailsModal: ModalDirective;
  
   constructor(private breadcrumb:BreadcrumbUrlService,
     private _httpService:HttpProviderService,
@@ -31,6 +31,7 @@ export class DataComponent implements OnInit {
   }
 
   ngOnInit() {
+
     var getItem = [{ab:"1",ba:"2"}];
     var str = '{"theTeam":[{"teamId":"1","status":"pending"},{"teamId":"2","status":"member"},{"teamId":"3","status":"member"}]}';
 
@@ -52,10 +53,6 @@ export class DataComponent implements OnInit {
       debugger
       this._httpService.handleError(error)
     });
-  }
-  
-  public openDetails(){
-    this.addDetailsModal.show();
   }
 
   public saveChanges(){
