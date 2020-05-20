@@ -1,64 +1,29 @@
 import * as React from 'react';
 import { BehaviorSubject } from 'rxjs';
-import { IHero } from '../utilities/interfaces/IHero';
-import SimpleImageSlider from "react-simple-image-slider";
+import { IProduct } from '../utilities/interfaces/IProduct';
 
 
 
-interface IReactBidirectionalHero {
-    heroes$: BehaviorSubject<IHero[]>;
+interface IReactBidirectionalProduct {
+    details$: any;
 }
 
-class ReactHero extends React.Component<IReactBidirectionalHero, any> {
+class ReactDetail extends React.Component<IReactBidirectionalProduct, any> {
 
     constructor(props) {
         super(props);
 
         this.state = {
-            heroes: []
+            details: this.props.details$
         };
-
-        this.addAge = this.addAge.bind(this);
-        this.addHero = this.addHero.bind(this);
-    }
-
-    componentDidMount(): void {
-        // this.props.heroes$.subscribe((res: IHero[]) => {
-        //   this.setState({heroes: res});
-        // });
-    }
-
-    addAge(i: number) {
-        const temp = this.state.heroes;
-        temp[i].age = temp[i].age + 1;
-
-        this.props.heroes$.next(temp);
-    }
-
-    addHero() {
-        const temp = this.state.heroes;
-        temp.push({ name: 'Atena', age: 31 });
-
-        this.props.heroes$.next(temp);
     }
 
     render() {
-        // const heroes = this.state.heroes.map((hero: IHero, i) => {
-        //   return <span key={i}>{hero.name} - {hero.age} <button onClick={() => this.addAge(i)}>Add {hero.name} age</button><br/></span>;
-        // });
-        // return (
-        //   <span>
-        //     <span>react-hero works!</span><br/>
-        //     {heroes}
-        //     <br/>
-        //     <button onClick={this.addHero}>ADD ATENA</button>
-        //   </span>
-        // );
 
         return (
             <div className={'row'}>
                 <div className="col-md-6">
-                    <p className="txt21">Hòa Bình là nhà thầu chính thi công kết cấu phần thô giai đoạn 1 của Quảng trường Mặt trời, nhà hàng Sea food và đường Carnival bao gồm 2 tầng hầm, 7 tầng cao.</p>
+                    <p className="txt21">{this.state.details.content}</p>
                 </div>
                 <div className="col-md-6">
 
@@ -135,4 +100,4 @@ class ReactHero extends React.Component<IReactBidirectionalHero, any> {
     }
 }
 
-export default ReactHero;
+export default ReactDetail;

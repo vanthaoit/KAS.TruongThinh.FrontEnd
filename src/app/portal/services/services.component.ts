@@ -4,7 +4,7 @@ import {IHero} from '../../utilities/interfaces/IHero';
 import {HeroService} from '../../core/services/hero.service';
 import { BehaviorSubject } from 'rxjs';
 import { ReactRelativeApplication } from 'src/app/shared/related/react-relative.component';
-declare function initialLoading():any;
+declare function initialRelativeLoad():any;
 
 @Component({
   selector: 'app-services',
@@ -23,15 +23,11 @@ export class ServicesComponent implements OnInit {
 
   ngOnInit(){
      ReactRelativeApplication.initialize('render-relative',this.injector);
-     initialLoading();
+     initialRelativeLoad();
      
   }
   createMessage(message) {
     this.breadcrumb.changeMessage(this._breadcrumbURL + message);
-  }
-  initHeroes() {
-    this.heroService.addHeroes({name: 'Zeus', age: 88});
-    this.heroService.addHeroes({name: 'Poseidon', age: 46});
   }
 
 }

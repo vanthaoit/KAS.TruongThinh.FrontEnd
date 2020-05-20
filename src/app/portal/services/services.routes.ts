@@ -17,7 +17,7 @@ export const servicesRoutes: Routes = [
             { path: 'data', loadChildren: './data/data.module#DataModule' },
             { path: 'mechanical', loadChildren: './mechanical/mechanical.module#MechanicalModule' },
              { path: 'business', loadChildren: './business/business.module#BusinessModule' },
-             { path: 'details', loadChildren: './details/details.module#DetailsModule' },
+             { path: 'details/:id', loadChildren: './details/details.module#DetailsModule' },
             // { path: 'details', loadChildren: () =>DetailsModule }
             //{ path: 'mechanical', loadChildren: () =>MechanicalModule }
 

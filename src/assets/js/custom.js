@@ -14,7 +14,7 @@ $(document).ready(function () {
 
     // var audio = document.getElementById("player");
     // audio.volume = 0.01;
-    initialLoading = function(){
+    initialRelativeLoad = function(){
         $("#flexiselDemo").flexisel({
             visibleItems: 3,
             animationSpeed: 1000,

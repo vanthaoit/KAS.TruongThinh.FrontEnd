@@ -1,20 +1,20 @@
 import {Injector} from '@angular/core';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import ReactHero from './react-hero';
+import ReactDetail from '../../../react/react-detail';
 import {BehaviorSubject} from 'rxjs';
-import {IHero} from '../utilities/interfaces/IHero';
+import {IProduct} from '../../../utilities/interfaces/IProduct';
 
-interface IReactApplication {
+interface IReactDetailApplication {
 injector: Injector;
-  heroes$: BehaviorSubject<IHero[]>;
+  details$: any;
 }
 
-class ReactApp extends React.Component<IReactApplication, any> {
+class ReactApp extends React.Component<IReactDetailApplication, any> {
   constructor(props) {
     super(props);
     this.state = {
-        heroes$: this.props.heroes$
+        details$: this.props.details$
       };
   }
 
@@ -23,21 +23,21 @@ class ReactApp extends React.Component<IReactApplication, any> {
       <div className={'renderer'}>
          <h1 className="txt2"><span> Công trình thương mại phức hợp</span></h1>
         <br/>
-        <ReactHero heroes$={this.state.heroes$}/>
+        <ReactDetail details$={this.state.details$}/>
       </div>
     );
   }
 }
 
-export class ReactApplication {
+export class ReactDetailApplication {
 
     static initialize(
         containerId: string,
         injector: Injector,
-        heroes$: BehaviorSubject<IHero[]>,
+        details$: any,
       ) {
         ReactDOM.render(
-          <ReactApp injector={injector} heroes$={heroes$}/>,
+          <ReactApp injector={injector} details$={details$}/>,
           document.getElementById(containerId)
         );
         /* get components from their class name: */

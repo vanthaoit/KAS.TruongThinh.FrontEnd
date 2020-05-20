@@ -1,5 +1,5 @@
 import { Component, ElementRef, AfterViewChecked, OnInit } from '@angular/core';
-declare function initialLoading ():any;
+declare function initialRelativeLoad ():any;
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

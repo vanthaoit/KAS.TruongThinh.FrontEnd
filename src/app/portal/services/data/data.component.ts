@@ -6,6 +6,7 @@ import {HttpProviderService} from  '../../../core/services/http-provider.service
 import { ReactDataApplication } from '../data/react-data.component';
 import { BehaviorSubject } from 'rxjs';
 import { ReactRelativeApplication } from 'src/app/shared/related/react-relative.component';
+import { rejects } from 'assert';
 
 declare var $:any;
 
@@ -20,7 +21,7 @@ export class DataComponent implements OnInit {
   _output:string;
   public entity:any;
   public _materialProduct:any;
-  _dataHttpService:any;
+  _dataHttpService:any[];
   _test:any;
  
   constructor(private breadcrumb:BreadcrumbUrlService,
@@ -31,28 +32,21 @@ export class DataComponent implements OnInit {
   }
 
   ngOnInit() {
-
-    var getItem = [{ab:"1",ba:"2"}];
-    var str = '{"theTeam":[{"teamId":"1","status":"pending"},{"teamId":"2","status":"member"},{"teamId":"3","status":"member"}]}';
-
-    var obj = JSON.parse(str);
-    obj['theTeam'].push({"teamId":"4","status":"pending"});
-    str = JSON.stringify(obj);
-    ReactDataApplication.initialize('product-detail',this.injector,str);
-    this.entity = {Content:''};
     this.getItems();
-    //this._dataHttpService = Material;
+    this.entity = {Content:''};
 
   }
-  public getItems(){
-    this._httpService.get('product/getall').subscribe((resp:any[])=>{
+
+  getItems(){
+      this._httpService.get('product/getall').subscribe((resp:any[])=>{
       
-      this._dataHttpService = resp;
-      console.log(this._dataHttpService);
-    }, error => {
-      debugger
-      this._httpService.handleError(error)
-    });
+        this._dataHttpService = resp;
+        ReactDataApplication.initialize('product-detail',this.injector,this._dataHttpService);
+        console.log(this._dataHttpService);
+      }, error => {
+        debugger
+        this._httpService.handleError(error)
+      });
   }
 
   public saveChanges(){
@@ -60,7 +54,6 @@ export class DataComponent implements OnInit {
     debugger
    
   }
-
 
 
 }
