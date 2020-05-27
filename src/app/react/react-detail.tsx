@@ -17,18 +17,22 @@ class ReactDetail extends React.Component<IReactBidirectionalProduct, any> {
             details: this.props.details$
         };
     }
+    componentWillMount() {
+        if (this.state.details !== undefined && typeof this.state.details != "undefined") {
+            console.log("componentWillMount is .... ");
+        }
+    }
 
     render() {
 
         return (
             <div className={'row'}>
-                <div className="col-md-6">
+                <div className="col-md-6 message-content">
                     <p className="txt21">{this.state.details.content}</p>
                 </div>
                 <div className="col-md-6">
 
                     <div id="reactSlideCarousel" className="carousel slide slide-about" data-ride="carousel">
-
                         <ol className="carousel-indicators">
                             <li data-target="#reactSlideCarousel" data-slide-to="0" className="active"></li>
                             <li data-target="#reactSlideCarousel" data-slide-to="1" className=""></li>
@@ -37,64 +41,54 @@ class ReactDetail extends React.Component<IReactBidirectionalProduct, any> {
                         </ol>
                         <div className="carousel-inner data-content-wrapper" role="listbox">
                             <div className="item active">
-                                <div className="container">
-                                    <div className="carousel-caption-about">
-                                        <h3 className="move-up">Big
+
+                                <div className="carousel-caption-about carousel-caption-react">
+                                    <img src="../../../../assets/images/banner1.jpg" alt="" />
+                                    <h3 className="move-up">Big
                                                     <span>Save</span>
-                                        </h3>
-                                        <div className="sitemessage">
-                                            <p>Get flat
-											<span>10%</span> Cashback</p>
-                                        </div>
-                                    </div>
+                                    </h3>
+
                                 </div>
                             </div>
-                            <div className="item item2">
-                                <div className="container">
-                                    <div className="carousel-caption-about">
-                                        <h3 className="move-down">Healthy
+                            <div className="item">
+
+                                <div className="carousel-caption-about carousel-caption-react">
+                                    <img src="../../../../assets/images/banner2.jpg" alt="" />
+                                    <h3 className="move-down">Healthy
 										<span>Saving</span>
-                                        </h3>
-                                        <div className="sitemessage">
-                                            <p>Get Upto
-											<span>30%</span> Off</p>
-                                        </div>
-                                    </div>
+                                    </h3>
+
                                 </div>
+
                             </div>
-                            <div className="item item3">
-                                <div className="container">
-                                    <div className="carousel-caption-about">
-                                        <h3 className="move-up">Big
+                            <div className="item">
+
+                                <div className="carousel-caption-about carousel-caption-react">
+                                    <img src="../../../../assets/images/banner3.jpg" alt="" />
+                                    <h3 className="move-up">Big
 										<span>Deal</span>
-                                        </h3>
-                                        <div className="sitemessage">
-                                            <p>Get Best Offer Upto
-											<span>20%</span>
-                                            </p>
-                                        </div>
+                                    </h3>
 
-                                    </div>
                                 </div>
+
                             </div>
-                            <div className="item item4">
-                                <div className="container">
-                                    <div className="carousel-caption-about">
-                                        <h3 className="move-down">Today
-										<span>Discount</span>
-                                        </h3>
-                                        <p>Get Now
-										<span>40%</span> Discount</p>
+                            <div className="item">
 
-                                    </div>
+                                <div className="carousel-caption-about carousel-caption-react">
+                                    <img src="../../../../assets/images/banner4.jpg" alt="" />
+                                    <h3 className="move-down">Today
+										<span>Discount</span>
+                                    </h3>
+
                                 </div>
+
                             </div>
                         </div>
 
                     </div>
 
                 </div>
-            </div >
+            </div>
         );
 
     }

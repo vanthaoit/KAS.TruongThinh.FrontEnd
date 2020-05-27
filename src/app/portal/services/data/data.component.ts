@@ -22,6 +22,7 @@ export class DataComponent implements OnInit {
   public entity:any;
   public _materialProduct:any;
   _dataHttpService:any[];
+  _dataCategory:any[];
   _test:any;
  
   constructor(private breadcrumb:BreadcrumbUrlService,
@@ -32,6 +33,14 @@ export class DataComponent implements OnInit {
   }
 
   ngOnInit() {
+    
+    this._httpService.get('productcategory/getall').subscribe((resp:any[])=>{
+      this._dataCategory = resp;
+      console.log("category = "+this._dataCategory);
+    }, error => {
+      debugger
+      this._httpService.handleError(error)
+    });
     this.getItems();
     this.entity = {Content:''};
 
@@ -47,6 +56,8 @@ export class DataComponent implements OnInit {
         debugger
         this._httpService.handleError(error)
       });
+
+      
   }
 
   public saveChanges(){

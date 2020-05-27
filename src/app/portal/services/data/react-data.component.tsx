@@ -17,10 +17,10 @@ class ReactData extends React.Component<IReactApplication, any> {
         };
     }
 
-    renObjData:Array<any> = this.props.passData.map(function (data, idx) {
+    renObjData: Array<any> = this.props.passData.map(function (data, idx) {
         return ([
 
-            <a href="/portal/services/details/1">
+            <a key={idx} href={"/portal/dich-vu/details/" + data.id}>
                 <div className="col-md-4">
                     <div className="project-img-div">
                         <img src={data.image} />

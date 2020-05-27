@@ -4,41 +4,37 @@ export const menuData: IMenu[] = [
     {
 
         id: 0,
-        name: 'Gia công cơ khí (GCCK)',
-        description: 'Gia công cơ khí',
-        url:'/\portal/\services/\data',
-        childMenu:[]
+        name: 'Trang chủ',
+        alias: 'trang-chu',
+        url:'/\portal/trang-chu',
     },
     {
 
         id: 1,
-        name: 'Tư vấn xây dựng (TVXD)',
-        description: 'Tư vấn xây dựng',
-        childMenu:
-            [
-                {
-                    id: 0,
-                    name: 'Khảo sát thiết kế',
-                    description: 'Khảo sát thiết kế'
-                   
-                },
-                {
-                    id: 1,
-                    name: 'Giám sát xây dựng',
-                    description: 'Giám sát xây dựng'
-                },
-                {
-                    id: 2,
-                    name: 'Dịch vụ tư vấn khác',
-                    description: 'Dịch vụ tư vấn khác'
-                }
-            ]
+        name: 'Giới thiệu',
+        alias: 'gioi-thieu',
+        url:'/\portal/gioi-thieu',
     },
     {
 
         id: 2,
-        name: 'Sản xuất kinh doanh (SXKD)',
-        description: 'Đầu tư & Sản xuất kinh doanh (SXKD)',
-        childMenu:[]
-    }
+        name: 'Dịch vụ',
+        alias: 'dich-vu',
+        url:'/\portal/dich-vu',
+    },
+    {
+
+        id: 3,
+        name: 'Tuyển dụng',
+        alias: 'tuyen-dung',
+        url:'/\portal/tuyen-dung',
+    },
+    {
+
+        id: 4,
+        name: 'Liên hệ',
+        alias: 'lien-he',
+        url:'/\portal/lien-he',
+    },
+    
 ]

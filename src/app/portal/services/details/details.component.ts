@@ -1,7 +1,7 @@
-import { Component, OnInit,Injector,Input } from '@angular/core';
-import {ReactDetailApplication} from './react-detail-application.details';
-import {BehaviorSubject, Subscription} from 'rxjs';
-import {IProduct} from '../../../utilities/interfaces/IProduct';
+import { Component, OnInit, Injector, Input } from '@angular/core';
+import { ReactDetailApplication } from './react-detail-application.details';
+import { BehaviorSubject, Subscription } from 'rxjs';
+import { IProduct } from '../../../utilities/interfaces/IProduct';
 import { ReactDataApplication } from '../data/react-data.component';
 import { ActivatedRoute } from '@angular/router';
 import { HttpProviderService } from 'src/app/core/services/http-provider.service';
@@ -14,11 +14,11 @@ export class DetailsComponent implements OnInit {
 
   @Input() details$: BehaviorSubject<IProduct[]>;
   private routeSub: Subscription;
-  _dataHttpService:any[];
-  _idTarge:number;
+  _dataHttpService: any[];
+  _idTarge: number;
   constructor(public injector: Injector,
     private route: ActivatedRoute,
-    private _httpService:HttpProviderService,) { }
+    private _httpService: HttpProviderService, ) { }
 
   ngOnInit() {
     this.routeSub = this.route.params.subscribe(params => {
@@ -30,16 +30,17 @@ export class DetailsComponent implements OnInit {
 
   }
 
-  getDetails(){
-      this._httpService.get('product/get/'+this._idTarge).subscribe((resp:any[])=>{
-      
-        this._dataHttpService = resp;
-        ReactDetailApplication.initialize('react-renderer',this.injector,this._dataHttpService);
-        console.log(this._dataHttpService);
-      }, error => {
-        debugger
-        this._httpService.handleError(error)
-      });
+  getDetails() {
+    console.log("idTarget = " + this._idTarge);
+    this._httpService.get('product/get/' + this._idTarge).subscribe((resp: any[]) => {
+
+      this._dataHttpService = resp;
+      ReactDetailApplication.initialize('react-renderer', this.injector, this._dataHttpService);
+      console.log(this._dataHttpService);
+    }, error => {
+      debugger
+      this._httpService.handleError(error)
+    });
   }
 
 

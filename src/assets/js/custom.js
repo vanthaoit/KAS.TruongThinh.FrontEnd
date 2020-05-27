@@ -14,7 +14,7 @@ $(document).ready(function () {
 
     // var audio = document.getElementById("player");
     // audio.volume = 0.01;
-    initialRelativeLoad = function(){
+    initialRelativeLoad = function () {
         $("#flexiselDemo").flexisel({
             visibleItems: 3,
             animationSpeed: 1000,
@@ -37,6 +37,7 @@ $(document).ready(function () {
                 }
             }
         });
+
     }
     $('.popup-with-zoom-anim').magnificPopup({
         type: 'inline',
@@ -49,7 +50,7 @@ $(document).ready(function () {
         removalDelay: 300,
         mainClass: 'my-mfp-zoom-in'
     });
-    
+
 
 
     // TODO: This is some kind of easy fix, maybe we can improve this

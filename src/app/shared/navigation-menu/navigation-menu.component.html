@@ -13,24 +13,23 @@
       </div>
       <div class="collapse navbar-collapse" id="navigation-dropdown-tabs">
         <ul class="nav navbar-nav">
-          <li><a (click)="switchMenu()" href="\portal\index" data-title="home">Trang chủ</a></li>
-          <li><a (click)="switchMenu()" href="\portal\about" data-title="about">Giới thiệu</a></li>
-          <!-- Mega Menu -->
+          <li><a (click)="switchMenu()" href="{{_menuData[0].url}}" data-title="home">{{_menuData[0].name}}</a></li>
+          <li><a (click)="switchMenu()" href="{{_menuData[1].url}}" data-title="about">{{_menuData[1].name}}</a></li>
+
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-title="service" data-toggle="dropdown">Dịch
-              vụ <b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" data-title="service" data-toggle="dropdown">{{_menuData[2].name}} <b class="caret"></b></a>
             <ul class="dropdown-menu multi-column columns-3 menu-position data-content-wrapper">
               <div class="row">
-                <div *ngFor="let item of _menuData;" class="col-sm-4">
-                  <ul *ngIf="item.childMenu.length ==0" class="single-column">
+                <div *ngFor="let item of _dataCategories;" class="col-sm-4">
+                  <ul *ngIf="item.productCategories.length ==0" class="single-column">
                     <li>
-                      <h6><a href="{{item.url}}">{{item.name}}</a></h6>
+                      <h6><a href="{{_menuData[2].url}}/{{item.id}}?name={{item.alias}}">{{item.name}}</a></h6>
                     </li>
                   </ul>
-                  <ul *ngIf="item.childMenu.length !=0" class="multi-column-dropdown">
-                    <h6><a href="{{item.url}}">{{item.name}}</a></h6>
-                    <li *ngFor="let item2 of item.childMenu">
-                      <a href="products.html">{{item2.name}}</a>
+                  <ul *ngIf="item.productCategories.length !=0" class="multi-column-dropdown">
+                    <h6><a href="{{_menuData[2].url}}/{{item.id}}?name={{item.alias}}">{{item.name}}</a></h6>
+                    <li *ngFor="let item2 of item.productCategories">
+                      <a href="{{_menuData[2].url}}/{{item2.id}}?name={{item.alias}}">{{item2.name}}</a>
                     </li>
                   </ul>
                 </div>
@@ -39,8 +38,9 @@
               </div>
             </ul>
           </li>
-          <li><a (click)="switchMenu()" href="\portal\recruitment" data-title="recruitment">Tuyển dụng</a></li>
-          <li><a (click)="switchMenu()" href="\portal\contact" data-title="contact">Liên hệ</a></li>
+          
+          <li><a (click)="switchMenu()" href="{{_menuData[3].url}}" data-title="recruitment">{{_menuData[3].name}}</a></li>
+          <li><a (click)="switchMenu()" href="{{_menuData[4].url}}" data-title="contact">{{_menuData[4].name}}</a></li>
         </ul>
       </div>
     </nav>

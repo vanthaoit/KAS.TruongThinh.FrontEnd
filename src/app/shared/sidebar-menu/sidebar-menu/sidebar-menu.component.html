@@ -5,7 +5,7 @@
             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
                 <div *ngFor="let item of _serviceMenu;" class="member-item">
-                    <div *ngIf="item.childMenu.length ==0">
+                    <div *ngIf="item.productCategories.length ==0">
                         <div class="panel-heading single-item" role="tab">
                             <h4 class="panel-title asd">
                                 <a href="#" class="pa_italic">
@@ -14,7 +14,7 @@
                             </h4>
                         </div>
                     </div>
-                    <div *ngIf="item.childMenu.length != 0">
+                    <div *ngIf="item.productCategories.length != 0">
                         <div class="panel-heading group-item" role="tab" id="{{'heading'+item.id}}">
                             <h4 class="panel-title asd">
                                 <a class="pa_italic" role="button" data-toggle="collapse" data-parent="#accordion"
@@ -29,7 +29,7 @@
                             [attr.aria-labelledby]="'heading' + item.id">
                             <div class="panel-body panel_text">
                                 <ul>
-                                    <li *ngFor="let item2 of item.childMenu;"><a href="products.html">{{item2.name}}</a>
+                                    <li *ngFor="let item2 of item.productCategories;"><a href="products.html">{{item2.name}}</a>
                                     </li>
 
                                 </ul>

@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import { navigationAction, navigationActiveClass, navigationDropdownTabs } from 'src/app/common/navigation.constant';
+import { HttpProviderService } from '../core/services/http-provider.service';
+import { Observable } from 'rxjs';
+import { IProduct } from './interfaces/IProduct';
 declare var $: any;
 
 @Injectable({
@@ -10,7 +13,8 @@ export class CommonService {
   _isActiveMenu: any;
   _isActiveSubMenu: any;
   _currentMenu:any;
-  constructor() {
+  _dataCategories:any[];
+  constructor(private _httpService:HttpProviderService) {
     this._isActiveMenu = localStorage.getItem(navigationAction.activeMenu);
     this._isActiveSubMenu = localStorage.getItem(navigationAction.activeSubMenu);
 
@@ -52,6 +56,10 @@ export class CommonService {
     this._currentMenu = $(this._navigationMenu).find('a[data-title=' + this._isActiveMenu + ']');
     this._currentMenu = this._currentMenu != undefined ? this._currentMenu :$(this._navigationMenu).find('span[data-title=' + this._isActiveMenu + ']')
     return this._currentMenu;
+  }
+
+  getProductCategories(){
+    return this._httpService.get('productcategory/getall');
   }
 
 

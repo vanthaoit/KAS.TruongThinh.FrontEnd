@@ -12,12 +12,13 @@ export const servicesRoutes: Routes = [
         //localhost:4200/
         path: '', component: ServicesComponent, children: [
             //localhost:4200/front-end
-            { path: '', redirectTo: 'data', pathMatch: 'full' },
+            { path: '', redirectTo: ':id?name=:name', pathMatch: 'full' },
             //localhost:4200/front-end/home
-            { path: 'data', loadChildren: './data/data.module#DataModule' },
+            { path: ':id?name=:name', loadChildren: './data/data.module#DataModule' },
             { path: 'mechanical', loadChildren: './mechanical/mechanical.module#MechanicalModule' },
-             { path: 'business', loadChildren: './business/business.module#BusinessModule' },
-             { path: 'details/:id', loadChildren: './details/details.module#DetailsModule' },
+            { path: 'details/:id', loadChildren: './details/details.module#DetailsModule' },
+             { path: '**', loadChildren: './business/business.module#BusinessModule' },
+             
             // { path: 'details', loadChildren: () =>DetailsModule }
             //{ path: 'mechanical', loadChildren: () =>MechanicalModule }
 

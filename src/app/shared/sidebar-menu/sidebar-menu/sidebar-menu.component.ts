@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { menuData} from 'src/app/utilities/data/menu.data';
+import { HttpProviderService } from 'src/app/core/services/http-provider.service';
 
 @Component({
   selector: 'app-sidebar-menu',
@@ -9,10 +10,18 @@ import { menuData} from 'src/app/utilities/data/menu.data';
 export class SidebarMenuComponent implements OnInit {
 
   _serviceMenu:any;
-  constructor() { }
+  constructor(private _httpService:HttpProviderService) { }
 
   ngOnInit() {
-    this._serviceMenu = menuData;
+    this.loadProducCategories();
+  }
+
+  loadProducCategories(){
+
+    this._httpService.get('productcategory/getall').subscribe((response:any)=>{ 
+        this._serviceMenu = response;
+        
+      }); 
   }
 
 }

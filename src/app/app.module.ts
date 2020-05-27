@@ -10,6 +10,7 @@ import { AuthenticationGuard } from '../app/core/guards/authentication.guard';
 import { UtilityService } from '../app/core/services/utility.service';
 import { PaginationModule } from 'ngx-bootstrap';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     HttpModule,
     RouterModule.forRoot(appRoutes),
     PaginationModule.forRoot(),

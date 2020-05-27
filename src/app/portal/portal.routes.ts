@@ -11,19 +11,19 @@ export const portalRoutes: Routes = [
           //localhost:4200/
           path: '', component: PortalComponent, children: [
             //localhost:4200/front-end
-            { path: '', redirectTo: 'index', pathMatch: 'full' },
+            { path: '', redirectTo: 'trang-chu', pathMatch: 'full' },
             //localhost:4200/front-end/home
-            { path: 'index', loadChildren: './index/index.module#IndexModule' },
+            { path: 'trang-chu', loadChildren: './index/index.module#IndexModule' },
             //{ path: 'index', loadChildren: () =>IndexModule },
 
-            { path: 'about', loadChildren: './about/about.module#AboutModule' },
+            { path: 'gioi-thieu', loadChildren: './about/about.module#AboutModule' },
 
-            { path: 'services', loadChildren: './services/services.module#ServicesModule' },
+            { path: 'dich-vu', loadChildren: './services/services.module#ServicesModule' },
 
-            { path: 'contact', loadChildren: './contact/contact.module#ContactModule' },
+            { path: 'lien-he', loadChildren: './contact/contact.module#ContactModule' },
             //{ path: 'contact', loadChildren: () =>ContactModule },
 
-            { path: 'recruitment', loadChildren: './recruitment/recruitment.module#RecruitmentModule' }
+            { path: 'tuyen-dung', loadChildren: './recruitment/recruitment.module#RecruitmentModule' }
             //{ path: 'recruitment', loadChildren: () =>RecruitmentModule }
 
         ]
