@@ -14,16 +14,20 @@ class ReactDetail extends React.Component<IReactBidirectionalProduct, any> {
         super(props);
 
         this.state = {
-            details: this.props.details$
+            details: this.props.details$,
+            splittedImages: ''
+
         };
     }
     componentWillMount() {
         if (this.state.details !== undefined && typeof this.state.details != "undefined") {
             console.log("componentWillMount is .... ");
         }
+        this.setState({ splittedImages: this.props.details$.moreImages.split(";") });
     }
 
     render() {
+        console.log("splitted = " + this.state.splittedImages + "length = " + this.state.splittedImages.length);
 
         return (
             <div className={'row'}>
@@ -34,55 +38,31 @@ class ReactDetail extends React.Component<IReactBidirectionalProduct, any> {
 
                     <div id="reactSlideCarousel" className="carousel slide slide-about" data-ride="carousel">
                         <ol className="carousel-indicators">
-                            <li data-target="#reactSlideCarousel" data-slide-to="0" className="active"></li>
-                            <li data-target="#reactSlideCarousel" data-slide-to="1" className=""></li>
-                            <li data-target="#reactSlideCarousel" data-slide-to="2" className=""></li>
-                            <li data-target="#reactSlideCarousel" data-slide-to="3" className=""></li>
+                            {this.state.splittedImages.map(function (data, index) {
+                                return ([
+                                    <li key={index} data-target="#reactSlideCarousel" data-slide-to={index} className={(index === 0 ? 'active' : '')}></li>
+                                ]);
+
+                            })}
                         </ol>
                         <div className="carousel-inner data-content-wrapper" role="listbox">
-                            <div className="item active">
+                            {
+                                this.state.splittedImages.map(function (data, index) {
+                                    return ([
+                                        <div key={index} className={"item "+ (index===0? 'active':'') }>
 
-                                <div className="carousel-caption-about carousel-caption-react">
-                                    <img src="../../../../assets/images/banner1.jpg" alt="" />
-                                    <h3 className="move-up">Big
+                                            <div className="carousel-caption-about carousel-caption-react">
+                                                <img src={data} alt="" />
+                                                <h3 className="move-up">Big
                                                     <span>Save</span>
-                                    </h3>
+                                                </h3>
 
-                                </div>
-                            </div>
-                            <div className="item">
-
-                                <div className="carousel-caption-about carousel-caption-react">
-                                    <img src="../../../../assets/images/banner2.jpg" alt="" />
-                                    <h3 className="move-down">Healthy
-										<span>Saving</span>
-                                    </h3>
-
-                                </div>
-
-                            </div>
-                            <div className="item">
-
-                                <div className="carousel-caption-about carousel-caption-react">
-                                    <img src="../../../../assets/images/banner3.jpg" alt="" />
-                                    <h3 className="move-up">Big
-										<span>Deal</span>
-                                    </h3>
-
-                                </div>
-
-                            </div>
-                            <div className="item">
-
-                                <div className="carousel-caption-about carousel-caption-react">
-                                    <img src="../../../../assets/images/banner4.jpg" alt="" />
-                                    <h3 className="move-down">Today
-										<span>Discount</span>
-                                    </h3>
-
-                                </div>
-
-                            </div>
+                                            </div>
+                                        </div>
+                                    ])
+                                })
+                            }
+                            
                         </div>
 
                     </div>

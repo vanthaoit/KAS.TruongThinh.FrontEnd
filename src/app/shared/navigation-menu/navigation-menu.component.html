@@ -17,7 +17,7 @@
           <li><a (click)="switchMenu()" href="{{_menuData[1].url}}" data-title="about">{{_menuData[1].name}}</a></li>
 
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-title="service" data-toggle="dropdown">{{_menuData[2].name}} <b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" data-title="service" data-toggle="dropdown">{{_menuData[2].name}} <b class="caret"></b></a>
             <ul class="dropdown-menu multi-column columns-3 menu-position data-content-wrapper">
               <div class="row">
                 <div *ngFor="let item of _dataCategories;" class="col-sm-4">

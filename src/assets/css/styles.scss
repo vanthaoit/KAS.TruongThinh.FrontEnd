@@ -5,7 +5,7 @@
 @import "../../../node_modules/alertifyjs/build/css/themes/default.css";
 // @import "../../../node_modules/angular-bootstrap-md/assets/scss/bootstrap/bootstrap.scss";
 // @import "../../../node_modules/angular-bootstrap-md/assets/scss/mdb.scss";
-@import "../../../node_modules/mdbootstrap//css/mdb.min.css";
+//@import "../../../node_modules/mdbootstrap//css/mdb.min.css";
 @import "../../../src/assets/css/fasthover.css";
 @import "../../../src/assets/css/jquery.countdown.css";
 @import "../../../src/assets/css/popuo-box.css";
@@ -433,7 +433,7 @@ ul.multi-column-dropdown h6 {
 font-weight:500 !important;
 text-decoration:none;
 font-family: -webkit-body;
-font-size: 1.3em;
+font-size: 1em;
 }
 .single-column li{
   list-style-type: none;
@@ -446,11 +446,11 @@ font-size: 1.3em;
   white-space: normal;
   font-weight:500 !important;
   text-decoration:none;
-  font-size: 1em;
+  font-size: .8em;
   text-align: center;
 }
 .single-column li h6 {
-  font-size: 1.5em !important;
+  font-size: 1.3em !important;
 }
 
 
@@ -3746,7 +3746,7 @@ ul.multi-column-dropdown:nth-child(2) {
   padding: 13px 0px !important;
 }
 .dropdown-menu.columns-3 {
-  padding: 30px 0px;
+  padding: 10px 0px;
 }
 .w3ls_products_pos h4 {
   padding-right: 3em;
