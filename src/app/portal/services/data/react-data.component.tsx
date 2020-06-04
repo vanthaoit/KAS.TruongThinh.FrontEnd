@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Injector } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { RouterConstants } from '../../../core/common/router.constants';
 
 
 interface IReactApplication {
@@ -20,7 +20,7 @@ class ReactData extends React.Component<IReactApplication, any> {
     renObjData: Array<any> = this.props.passData.map(function (data, idx) {
         return ([
 
-            <a key={idx} href={"/portal/dich-vu/details/" + data.id}>
+            <a key={idx} href={RouterConstants.DATA_ROUTER + data.id}>
                 <div className="col-md-4">
                     <div className="project-img-div">
                         <img src={data.image} />

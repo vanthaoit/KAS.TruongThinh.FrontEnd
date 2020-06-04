@@ -5,6 +5,10 @@ import { IProduct } from '../../../utilities/interfaces/IProduct';
 import { ReactDataApplication } from '../data/react-data.component';
 import { ActivatedRoute } from '@angular/router';
 import { HttpProviderService } from 'src/app/core/services/http-provider.service';
+import { ReactRelativeApplication } from 'src/app/shared/related/react-relative.component';
+import { StoreProcedureConstants } from '../../../core/common/store-procedure.constants';
+import { ReactSidebarApplication } from '../../../shared/sidebar-menu/sidebar-menu/react-sidebar';
+declare function initialRelativeLoad():any;
 
 @Component({
   selector: 'app-details',
@@ -27,6 +31,7 @@ export class DetailsComponent implements OnInit {
       this._idTarge = params['id'];
     });
     this.getDetails();
+    this.getRelated();
 
   }
 
@@ -42,6 +47,19 @@ export class DetailsComponent implements OnInit {
       this._httpService.handleError(error)
     });
   }
+  getRelated(){
+    this._httpService.post('Product/GetWithProcedure/'+StoreProcedureConstants.usp_SEL_IndexSlider,[]).subscribe((resp:any)=>{
+      debugger
+      ReactRelativeApplication.initialize('render-relative',resp);
+      initialRelativeLoad();
+      console.log("related = "+resp);
+    }, error => {
+      debugger
+      this._httpService.handleError(error)
+    });
+
+    
+}
 
 
 

@@ -4,9 +4,7 @@ import {BreadcrumbUrlService} from '../../../core/services/breadcrumb-url.servic
 import {Material} from '../../../utilities/data/product.data';
 import {HttpProviderService} from  '../../../core/services/http-provider.service';
 import { ReactDataApplication } from '../data/react-data.component';
-import { BehaviorSubject } from 'rxjs';
-import { ReactRelativeApplication } from 'src/app/shared/related/react-relative.component';
-import { rejects } from 'assert';
+import { ReactSidebarApplication } from '../../../shared/sidebar-menu/sidebar-menu/react-sidebar';
 
 declare var $:any;
 
@@ -36,6 +34,7 @@ export class DataComponent implements OnInit {
     
     this._httpService.get('productcategory/getall').subscribe((resp:any[])=>{
       this._dataCategory = resp;
+      //ReactSidebarApplication.Initialize('accordion',resp);
       console.log("category = "+this._dataCategory);
     }, error => {
       debugger

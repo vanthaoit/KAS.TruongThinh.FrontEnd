@@ -1,7 +1,7 @@
 export class SystemConstants {
     //hosts
-    public static URL_LOCAL_HOST_API_ENDPOINT = "https://apiservice.truongthinhmanufacture.com/api/";
-    //public static URL_LOCAL_HOST_API_ENDPOINT = "http://localhost:3500/api/";
+    //public static URL_LOCAL_HOST_API_ENDPOINT = "https://apiservice.truongthinhmanufacture.com/api/";
+    public static URL_LOCAL_HOST_API_ENDPOINT = "http://localhost:3500/api/";
 
     public static CURRENT_USER = "CURRENT_USER";
     public static AUTHORIZATION = "Authorization";

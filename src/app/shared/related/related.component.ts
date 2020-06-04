@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ReactRelativeApplication } from './react-relative.component';
+import {HttpProviderService} from  '../../core/services/http-provider.service';
+import { StoreProcedureConstants } from './../../core/common/store-procedure.constants';
+
 
 @Component({
   selector: 'app-related',
@@ -7,9 +11,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RelatedComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _httpService:HttpProviderService) { }
 
   ngOnInit() {
+   
   }
+  
 
 }

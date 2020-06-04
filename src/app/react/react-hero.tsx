@@ -43,17 +43,6 @@ class ReactHero extends React.Component<IReactBidirectionalHero, any> {
     }
 
     render() {
-        // const heroes = this.state.heroes.map((hero: IHero, i) => {
-        //   return <span key={i}>{hero.name} - {hero.age} <button onClick={() => this.addAge(i)}>Add {hero.name} age</button><br/></span>;
-        // });
-        // return (
-        //   <span>
-        //     <span>react-hero works!</span><br/>
-        //     {heroes}
-        //     <br/>
-        //     <button onClick={this.addHero}>ADD ATENA</button>
-        //   </span>
-        // );
 
         return (
             <div className={'row'}>
