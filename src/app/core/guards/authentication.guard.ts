@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, RouterStateSnapshot, CanActivate } from '@angular/router';
 import { Router } from '@angular/router';
 import { UrlConstants } from '../common/url.constants';
-import { SystemConstants } from '../common/system.constants';
+import { SystemConstants, BaseSystemConstants } from '../common/system.constants';
 import { UtilityService } from '../services/utility.service';
 
 @Injectable()
@@ -12,7 +12,7 @@ export class AuthenticationGuard implements CanActivate {
 
     }
     canActivate(activatedRoute: ActivatedRouteSnapshot, routerState: RouterStateSnapshot) {
-        var hasCurrentUser = localStorage.getItem(SystemConstants.CURRENT_USER);
+        var hasCurrentUser = localStorage.getItem(BaseSystemConstants.CURRENT_USER);
         if (hasCurrentUser) {
             return true;
         } else {

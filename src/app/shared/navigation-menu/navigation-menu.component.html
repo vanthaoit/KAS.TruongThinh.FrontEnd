@@ -23,13 +23,13 @@
                 <div *ngFor="let item of _dataCategories;" class="col-sm-4">
                   <ul *ngIf="item.productCategories.length ==0" class="single-column">
                     <li>
-                      <h6><a href="{{_menuData[2].url}}/{{item.id}}?name={{item.alias}}">{{item.name}}</a></h6>
+                      <h6><a href="{{_menuData[2].url}}/danh-muc/{{item.alias}}">{{item.name}}</a></h6>
                     </li>
                   </ul>
                   <ul *ngIf="item.productCategories.length !=0" class="multi-column-dropdown">
-                    <h6><a href="{{_menuData[2].url}}/{{item.id}}?name={{item.alias}}">{{item.name}}</a></h6>
+                    <h6><a href="{{_menuData[2].url}}/danh-muc/{{item.alias}}">{{item.name}}</a></h6>
                     <li *ngFor="let item2 of item.productCategories">
-                      <a href="{{_menuData[2].url}}/{{item2.id}}?name={{item.alias}}">{{item2.name}}</a>
+                      <a href="{{_menuData[2].url}}/danh-muc/{{item.alias}}">{{item2.name}}</a>
                     </li>
                   </ul>
                 </div>

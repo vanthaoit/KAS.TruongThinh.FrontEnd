@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { NotificationService } from '../core/services/notification.service';
+//import { NotificationService } from '../core/services/notification.service';
 import { AuthenticationService } from '../core/services/authentication.service';
 import { UtilityService } from '../core/services/utility.service';
 
@@ -19,7 +19,7 @@ export const loginRoutes: Routes = [
     FormsModule,
     RouterModule.forChild(loginRoutes)
   ],
-  providers: [NotificationService, AuthenticationService, UtilityService],
+  providers: [AuthenticationService, UtilityService],
   declarations: [LoginComponent]
 })
 export class LoginModule { }

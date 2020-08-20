@@ -19,10 +19,11 @@ export class LoginComponent implements OnInit {
     ) { }
 
   ngOnInit() {
+    this.logIn();
   }
 
   logIn() {
-    
+    //ReactLoginApplication.Initialize("menu-login-button");
 
   }
   displaySuccess(){

@@ -87,7 +87,7 @@ class ReactSidebar extends React.Component<any> {
               ) : (
                 <div className="panel-heading single-item" role="tab">
                   <h4 className="panel-title asd">
-                    <a href={menuData[2].url+"/"+data.id + "?name="+data.alias} className="pa_italic">
+                    <a href={menuData[2].url+"/" + "danh-muc/"+data.alias} className="pa_italic">
                       {data.name}
                     </a>
                   </h4>

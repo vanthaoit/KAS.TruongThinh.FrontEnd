@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Routes } from '@angular/router';
 import { NotificationService } from './notification.service';
 import { AuthenticationService } from './authentication.service';
-import { SystemConstants } from '../common/system.constants';
+import { SystemConstants, BaseSystemConstants } from '../common/system.constants';
 import { MessageConstants } from '../common/message.constants';
 import { UtilityService } from './utility.service';
 import { catchError, map } from 'rxjs/operators';
@@ -20,7 +20,7 @@ export class HttpProviderService {
     private _notificationService: NotificationService,
     private _utilityService: UtilityService) {
     this._header = new HttpHeaders();
-    this._header.append("Content-Type", SystemConstants.HEADER_CONTENT_TYPE_JSON);
+    this._header.append("Content-Type", BaseSystemConstants.HEADER_CONTENT_TYPE_JSON);
   }
 
 
@@ -31,7 +31,8 @@ export class HttpProviderService {
   }
   post(uri: string, data?: any) {
     this.getHeader();
-    return this._http.post(SystemConstants.URL_LOCAL_HOST_API_ENDPOINT + uri, data, { headers: this._header }).pipe(catchError(this.handleError));
+   
+    return this._http.post(SystemConstants.URL_LOCAL_HOST_API_ENDPOINT + uri, data, { headers: this._header } ).pipe(catchError(this.handleError));
 
   }
   put(uri: string, data?: any) {
@@ -50,14 +51,14 @@ export class HttpProviderService {
     return data || {}
   }
   private getHeader(){
-    this._header.delete(SystemConstants.AUTHORIZATION);
+    this._header.delete(BaseSystemConstants.AUTHORIZATION);
     //this._header.append(SystemConstants.AUTHORIZATION, SystemConstants.BEARER +" " + this._authenticationService.getLogInUser().access_token);
   }
   handleError(error: any) {
     if (error.status == 401) {
 
       this._notificationService.displayErrorMessage(MessageConstants.LOGIN_TRY_AGAIN_MSG);
-      localStorage.removeItem(SystemConstants.CURRENT_USER);
+      localStorage.removeItem(BaseSystemConstants.CURRENT_USER);
       //this._utilityService.navigateToLogin();
     } else {
       let errMessage = (error.message) ? error.message : (error.status) ? "$error.status - $error.statusText" : MessageConstants.SYSTEM_ERROR_MSG;
